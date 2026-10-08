@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c08w61ej8ewnc"]
+
+[ext_resource type="Script" uid="uid://j7x250mp0xi8" path="res://Entities/Blob/blob.gd" id="1_d54xy"]
+[ext_resource type="PackedScene" uid="uid://cnyt1wjqydkuv" path="res://ExtractionPoint/extraction_point.tscn" id="2_au8yb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_au8yb"]
+size = Vector2(64, 64)
+
+[node name="Blob" type="CharacterBody2D" unique_id=82519219]
+script = ExtResource("1_d54xy")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=458801213]
+color = Color(1, 0.23137255, 1, 1)
+polygon = PackedVector2Array(-32, -48, -32, 32, 32, 32, 32, -48, 16, -32, -16, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1682441963]
+shape = SubResource("RectangleShape2D_au8yb")
+
+[node name="ExtractionPoint" parent="." unique_id=224090605 instance=ExtResource("2_au8yb")]
