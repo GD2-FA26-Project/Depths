@@ -2,77 +2,256 @@
 
 [ext_resource type="Script" uid="uid://cp3p0tikyo2oy" path="res://Entities/Worm/worm.gd" id="1_va2e6"]
 [ext_resource type="PackedScene" uid="uid://bx7p8ckb4pj6e" path="res://Entities/Worm/worm_segment.tscn" id="2_rbsx2"]
-[ext_resource type="Script" uid="uid://1h8by4ah43nu" path="res://Entities/Worm/worm_segment.gd" id="3_a0cwe"]
 
 [node name="Worm" type="Node2D" unique_id=1662606504 node_paths=PackedStringArray("segments", "head")]
 script = ExtResource("1_va2e6")
-segments = [NodePath("WormSegment"), NodePath("@CharacterBody2D@59375"), NodePath("@CharacterBody2D@59376"), NodePath("@CharacterBody2D@59377"), NodePath("@CharacterBody2D@59378"), NodePath("@CharacterBody2D@59379"), NodePath("@CharacterBody2D@59380"), NodePath("@CharacterBody2D@59381"), NodePath("@CharacterBody2D@59382"), NodePath("@CharacterBody2D@59383")]
-head = NodePath("WormSegment")
+segments = [NodePath("@CharacterBody2D@19826"), NodePath("@CharacterBody2D@19827"), NodePath("@CharacterBody2D@19828"), NodePath("@CharacterBody2D@19829"), NodePath("@CharacterBody2D@19830"), NodePath("@CharacterBody2D@19831"), NodePath("@CharacterBody2D@19832"), NodePath("@CharacterBody2D@19833"), NodePath("@CharacterBody2D@19834"), NodePath("@CharacterBody2D@19835"), NodePath("@CharacterBody2D@19836"), NodePath("@CharacterBody2D@19837"), NodePath("@CharacterBody2D@19838"), NodePath("@CharacterBody2D@19839"), NodePath("@CharacterBody2D@19840"), NodePath("@CharacterBody2D@19841"), NodePath("@CharacterBody2D@19842"), NodePath("@CharacterBody2D@19843"), NodePath("@CharacterBody2D@19844"), NodePath("@CharacterBody2D@19845"), NodePath("@CharacterBody2D@19846"), NodePath("@CharacterBody2D@19847"), NodePath("@CharacterBody2D@19848"), NodePath("@CharacterBody2D@19849"), NodePath("@CharacterBody2D@19850"), NodePath("@CharacterBody2D@19851"), NodePath("@CharacterBody2D@19852"), NodePath("@CharacterBody2D@19853"), NodePath("@CharacterBody2D@19854"), NodePath("@CharacterBody2D@19855"), NodePath("@CharacterBody2D@19856"), NodePath("@CharacterBody2D@19857"), NodePath("@CharacterBody2D@19858"), NodePath("@CharacterBody2D@19859"), NodePath("@CharacterBody2D@19860"), NodePath("@CharacterBody2D@19861"), NodePath("@CharacterBody2D@19862"), NodePath("@CharacterBody2D@19863"), NodePath("@CharacterBody2D@19864"), NodePath("@CharacterBody2D@19865"), NodePath("@CharacterBody2D@19866"), NodePath("@CharacterBody2D@19867"), NodePath("@CharacterBody2D@19868"), NodePath("@CharacterBody2D@19869"), NodePath("@CharacterBody2D@19870"), NodePath("@CharacterBody2D@19871"), NodePath("@CharacterBody2D@19872"), NodePath("@CharacterBody2D@19873"), NodePath("@CharacterBody2D@19874"), NodePath("@CharacterBody2D@19875")]
+head = NodePath("@CharacterBody2D@19826")
 
-[node name="WormSegment" type="CharacterBody2D" parent="." unique_id=1461594538 instance=ExtResource("2_rbsx2")]
-collision_layer = 2
+[node name="@CharacterBody2D@19826" parent="." unique_id=1461594538 instance=ExtResource("2_rbsx2")]
 collision_mask = 0
-script = ExtResource("3_a0cwe")
 
-[node name="@CharacterBody2D@59375" type="CharacterBody2D" parent="." unique_id=569662892 instance=ExtResource("2_rbsx2")]
+[node name="@CharacterBody2D@19827" parent="." unique_id=1471937260 instance=ExtResource("2_rbsx2")]
 position = Vector2(64, 0)
 rotation = 3.1415925
-collision_layer = 2
 collision_mask = 0
-script = ExtResource("3_a0cwe")
 
-[node name="@CharacterBody2D@59376" type="CharacterBody2D" parent="." unique_id=1020260588 instance=ExtResource("2_rbsx2")]
+[node name="@CharacterBody2D@19828" parent="." unique_id=16097582 instance=ExtResource("2_rbsx2")]
 position = Vector2(128, 0)
 rotation = 3.1415925
-collision_layer = 2
 collision_mask = 0
-script = ExtResource("3_a0cwe")
 
-[node name="@CharacterBody2D@59377" type="CharacterBody2D" parent="." unique_id=395270959 instance=ExtResource("2_rbsx2")]
+[node name="@CharacterBody2D@19829" parent="." unique_id=70541994 instance=ExtResource("2_rbsx2")]
 position = Vector2(192, 0)
 rotation = 3.1415925
-collision_layer = 2
 collision_mask = 0
-script = ExtResource("3_a0cwe")
 
-[node name="@CharacterBody2D@59378" type="CharacterBody2D" parent="." unique_id=214742620 instance=ExtResource("2_rbsx2")]
+[node name="@CharacterBody2D@19830" parent="." unique_id=1664278519 instance=ExtResource("2_rbsx2")]
 position = Vector2(256, 0)
 rotation = 3.1415925
-collision_layer = 2
 collision_mask = 0
-script = ExtResource("3_a0cwe")
 
-[node name="@CharacterBody2D@59379" type="CharacterBody2D" parent="." unique_id=778640753 instance=ExtResource("2_rbsx2")]
+[node name="@CharacterBody2D@19831" parent="." unique_id=1198817900 instance=ExtResource("2_rbsx2")]
 position = Vector2(320, 0)
 rotation = 3.1415925
-collision_layer = 2
 collision_mask = 0
-script = ExtResource("3_a0cwe")
 
-[node name="@CharacterBody2D@59380" type="CharacterBody2D" parent="." unique_id=547296525 instance=ExtResource("2_rbsx2")]
+[node name="@CharacterBody2D@19832" parent="." unique_id=1569666406 instance=ExtResource("2_rbsx2")]
 position = Vector2(384, 0)
 rotation = 3.1415925
-collision_layer = 2
 collision_mask = 0
-script = ExtResource("3_a0cwe")
 
-[node name="@CharacterBody2D@59381" type="CharacterBody2D" parent="." unique_id=946925703 instance=ExtResource("2_rbsx2")]
+[node name="@CharacterBody2D@19833" parent="." unique_id=1592098033 instance=ExtResource("2_rbsx2")]
 position = Vector2(448, 0)
 rotation = 3.1415925
-collision_layer = 2
 collision_mask = 0
-script = ExtResource("3_a0cwe")
 
-[node name="@CharacterBody2D@59382" type="CharacterBody2D" parent="." unique_id=908585756 instance=ExtResource("2_rbsx2")]
+[node name="@CharacterBody2D@19834" parent="." unique_id=820097160 instance=ExtResource("2_rbsx2")]
 position = Vector2(512, 0)
 rotation = 3.1415925
-collision_layer = 2
 collision_mask = 0
-script = ExtResource("3_a0cwe")
 
-[node name="@CharacterBody2D@59383" type="CharacterBody2D" parent="." unique_id=1945705445 instance=ExtResource("2_rbsx2")]
+[node name="@CharacterBody2D@19835" parent="." unique_id=242113035 instance=ExtResource("2_rbsx2")]
 position = Vector2(576, 0)
 rotation = 3.1415925
-collision_layer = 2
 collision_mask = 0
-script = ExtResource("3_a0cwe")
+
+[node name="@CharacterBody2D@19836" parent="." unique_id=899626300 instance=ExtResource("2_rbsx2")]
+position = Vector2(640, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19837" parent="." unique_id=2101657760 instance=ExtResource("2_rbsx2")]
+position = Vector2(704, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19838" parent="." unique_id=1824833207 instance=ExtResource("2_rbsx2")]
+position = Vector2(768, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19839" parent="." unique_id=1232683999 instance=ExtResource("2_rbsx2")]
+position = Vector2(832, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19840" parent="." unique_id=1366969643 instance=ExtResource("2_rbsx2")]
+position = Vector2(896, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19841" parent="." unique_id=461450090 instance=ExtResource("2_rbsx2")]
+position = Vector2(960, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19842" parent="." unique_id=1349317507 instance=ExtResource("2_rbsx2")]
+position = Vector2(1024, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19843" parent="." unique_id=1198270378 instance=ExtResource("2_rbsx2")]
+position = Vector2(1088, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19844" parent="." unique_id=1350593667 instance=ExtResource("2_rbsx2")]
+position = Vector2(1152, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19845" parent="." unique_id=401277784 instance=ExtResource("2_rbsx2")]
+position = Vector2(1216, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19846" parent="." unique_id=469992566 instance=ExtResource("2_rbsx2")]
+position = Vector2(1280, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19847" parent="." unique_id=902518413 instance=ExtResource("2_rbsx2")]
+position = Vector2(1344, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19848" parent="." unique_id=1173839366 instance=ExtResource("2_rbsx2")]
+position = Vector2(1408, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19849" parent="." unique_id=2108441356 instance=ExtResource("2_rbsx2")]
+position = Vector2(1472, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19850" parent="." unique_id=476526842 instance=ExtResource("2_rbsx2")]
+position = Vector2(1536, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19851" parent="." unique_id=1318522661 instance=ExtResource("2_rbsx2")]
+position = Vector2(1600, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19852" parent="." unique_id=496019964 instance=ExtResource("2_rbsx2")]
+position = Vector2(1664, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19853" parent="." unique_id=1998069378 instance=ExtResource("2_rbsx2")]
+position = Vector2(1728, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19854" parent="." unique_id=1050744174 instance=ExtResource("2_rbsx2")]
+position = Vector2(1792, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19855" parent="." unique_id=1384559776 instance=ExtResource("2_rbsx2")]
+position = Vector2(1856, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19856" parent="." unique_id=972907372 instance=ExtResource("2_rbsx2")]
+position = Vector2(1920, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19857" parent="." unique_id=1361653587 instance=ExtResource("2_rbsx2")]
+position = Vector2(1984, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19858" parent="." unique_id=791379570 instance=ExtResource("2_rbsx2")]
+position = Vector2(2048, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19859" parent="." unique_id=515126771 instance=ExtResource("2_rbsx2")]
+position = Vector2(2112, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19860" parent="." unique_id=1131505737 instance=ExtResource("2_rbsx2")]
+position = Vector2(2176, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19861" parent="." unique_id=2091023099 instance=ExtResource("2_rbsx2")]
+position = Vector2(2240, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19862" parent="." unique_id=44122747 instance=ExtResource("2_rbsx2")]
+position = Vector2(2304, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19863" parent="." unique_id=1736132647 instance=ExtResource("2_rbsx2")]
+position = Vector2(2368, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19864" parent="." unique_id=1487238377 instance=ExtResource("2_rbsx2")]
+position = Vector2(2432, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19865" parent="." unique_id=1137606818 instance=ExtResource("2_rbsx2")]
+position = Vector2(2496, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19866" parent="." unique_id=1941344687 instance=ExtResource("2_rbsx2")]
+position = Vector2(2560, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19867" parent="." unique_id=622475335 instance=ExtResource("2_rbsx2")]
+position = Vector2(2624, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19868" parent="." unique_id=85254384 instance=ExtResource("2_rbsx2")]
+position = Vector2(2688, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19869" parent="." unique_id=1019307427 instance=ExtResource("2_rbsx2")]
+position = Vector2(2752, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19870" parent="." unique_id=1702827456 instance=ExtResource("2_rbsx2")]
+position = Vector2(2816, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19871" parent="." unique_id=1082671056 instance=ExtResource("2_rbsx2")]
+position = Vector2(2880, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19872" parent="." unique_id=193575099 instance=ExtResource("2_rbsx2")]
+position = Vector2(2944, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19873" parent="." unique_id=1661649782 instance=ExtResource("2_rbsx2")]
+position = Vector2(3008, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19874" parent="." unique_id=399552900 instance=ExtResource("2_rbsx2")]
+position = Vector2(3072, 0)
+rotation = 3.1415925
+collision_mask = 0
+
+[node name="@CharacterBody2D@19875" parent="." unique_id=702723518 instance=ExtResource("2_rbsx2")]
+position = Vector2(3136, 0)
+rotation = 3.1415925
+collision_mask = 0
