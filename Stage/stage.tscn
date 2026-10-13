@@ -1,91 +1,29 @@
 [gd_scene format=3 uid="uid://c7fpp41850gr"]
 
+[ext_resource type="Script" uid="uid://b0xy6tnnn2jj7" path="res://Stage/stage.gd" id="1_4qfnv"]
 [ext_resource type="PackedScene" uid="uid://cfunlmpjrl4tt" path="res://Entities/Player/player.tscn" id="2_xfrkk"]
-[ext_resource type="PackedScene" uid="uid://dsvlrh5rpo2mt" path="res://Entities/Worm/worm.tscn" id="3_430pi"]
-[ext_resource type="Script" uid="uid://1h8by4ah43nu" path="res://Entities/Worm/worm_segment.gd" id="4_2idjd"]
-[ext_resource type="PackedScene" uid="uid://bx7p8ckb4pj6e" path="res://Entities/Worm/worm_segment.tscn" id="4_n2kry"]
 [ext_resource type="PackedScene" uid="uid://c08w61ej8ewnc" path="res://Entities/Blob/Blob.tscn" id="5_2idjd"]
 
-[node name="Stage" type="Node" unique_id=121595119]
+[node name="Stage" type="Node2D" unique_id=1574512219]
+script = ExtResource("1_4qfnv")
+
+[node name="Map" type="StaticBody2D" parent="." unique_id=516735834]
+light_mask = 4
+visibility_layer = 9
+collision_layer = 4
+
+[node name="Map" type="Polygon2D" parent="Map" unique_id=370363785]
+color = Color(0.74509805, 0.74509805, 0.74509805, 1)
+polygon = PackedVector2Array(-286, 618, -339, -2567, 291, -2450, 107, 560, 785, 508, 696, -2565, 1182, -2238, 1178, 753, -338, 882)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map" unique_id=571237112]
+polygon = PackedVector2Array(-290, -2546, 258, -2432, 74, 617, 843, 523, 690, -2534, 1143, -2215, 1175, 708, -314, 858, -258, 594)
 
 [node name="Player" parent="." unique_id=631480404 instance=ExtResource("2_xfrkk")]
 position = Vector2(333, -363)
+collision_mask = 4
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1668933314]
 
-[node name="Worm" parent="." unique_id=1662606504 node_paths=PackedStringArray("segments", "head") instance=ExtResource("3_430pi")]
-segments = [NodePath("@CharacterBody2D@68267"), NodePath("@CharacterBody2D@68268"), NodePath("@CharacterBody2D@68269"), NodePath("@CharacterBody2D@68270"), NodePath("@CharacterBody2D@68271"), NodePath("@CharacterBody2D@68272"), NodePath("@CharacterBody2D@68273"), NodePath("@CharacterBody2D@68274"), NodePath("@CharacterBody2D@68275"), NodePath("@CharacterBody2D@68276")]
-head = NodePath("@CharacterBody2D@68267")
-
-[node name="@CharacterBody2D@68267" type="CharacterBody2D" parent="Worm" unique_id=1461594538 instance=ExtResource("4_n2kry")]
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_2idjd")
-
-[node name="@CharacterBody2D@68268" type="CharacterBody2D" parent="Worm" unique_id=328751680 instance=ExtResource("4_n2kry")]
-position = Vector2(64, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_2idjd")
-
-[node name="@CharacterBody2D@68269" type="CharacterBody2D" parent="Worm" unique_id=586581930 instance=ExtResource("4_n2kry")]
-position = Vector2(128, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_2idjd")
-
-[node name="@CharacterBody2D@68270" type="CharacterBody2D" parent="Worm" unique_id=166362661 instance=ExtResource("4_n2kry")]
-position = Vector2(192, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_2idjd")
-
-[node name="@CharacterBody2D@68271" type="CharacterBody2D" parent="Worm" unique_id=201072552 instance=ExtResource("4_n2kry")]
-position = Vector2(256, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_2idjd")
-
-[node name="@CharacterBody2D@68272" type="CharacterBody2D" parent="Worm" unique_id=564349904 instance=ExtResource("4_n2kry")]
-position = Vector2(320, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_2idjd")
-
-[node name="@CharacterBody2D@68273" type="CharacterBody2D" parent="Worm" unique_id=724183157 instance=ExtResource("4_n2kry")]
-position = Vector2(384, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_2idjd")
-
-[node name="@CharacterBody2D@68274" type="CharacterBody2D" parent="Worm" unique_id=1188288911 instance=ExtResource("4_n2kry")]
-position = Vector2(448, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_2idjd")
-
-[node name="@CharacterBody2D@68275" type="CharacterBody2D" parent="Worm" unique_id=665463660 instance=ExtResource("4_n2kry")]
-position = Vector2(512, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_2idjd")
-
-[node name="@CharacterBody2D@68276" type="CharacterBody2D" parent="Worm" unique_id=1753986485 instance=ExtResource("4_n2kry")]
-position = Vector2(576, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_2idjd")
-
 [node name="Blob" parent="." unique_id=82519219 instance=ExtResource("5_2idjd")]
 position = Vector2(618, -181)
-collision_layer = 2
-collision_mask = 0

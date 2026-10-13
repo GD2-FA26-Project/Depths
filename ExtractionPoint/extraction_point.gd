@@ -1,3 +1,1 @@
-class_name WeakPoint extends Area2D
-
-signal hit
+class_name ExtractionPoint extends Area2D
