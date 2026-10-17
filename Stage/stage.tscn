@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b0xy6tnnn2jj7" path="res://Stage/stage.gd" id="1_4qfnv"]
 [ext_resource type="PackedScene" uid="uid://cfunlmpjrl4tt" path="res://Entities/Player/player.tscn" id="2_xfrkk"]
-[ext_resource type="PackedScene" uid="uid://c08w61ej8ewnc" path="res://Entities/Blob/Blob.tscn" id="5_2idjd"]
 
 [node name="Stage" type="Node2D" unique_id=1574512219]
 script = ExtResource("1_4qfnv")
@@ -13,17 +12,14 @@ visibility_layer = 9
 collision_layer = 4
 
 [node name="Map" type="Polygon2D" parent="Map" unique_id=370363785]
-color = Color(0.74509805, 0.74509805, 0.74509805, 1)
-polygon = PackedVector2Array(-286, 618, -339, -2567, 291, -2450, 107, 560, 785, 508, 696, -2565, 1182, -2238, 1178, 753, -338, 882)
+polygon = PackedVector2Array(17, 47, 17, 224, 241, 105, 394, 271, 646, -13, 830, 131, 832, 389, 1421, 308, 1230, 268, 1430, 182, 1519, 182, 1668, 357, 1833, 252, 2008, 261, 1933, 869, 1582, 869, 1563, 957, 1016, 939, 1014, 939, 867, 1067, 865, 1067, 797, 1062, 381, 1062, 381, 1104, 166, 997, -127, 974, -29, 1139, 252, 1139, 548, 1332, 839, 1265, 1458, 1239, 1461, 1106, 2019, 1106, 2066, 813, 2110, 278, 2103, 24, 1714, 22, 1340, 52, 969, 47, 737, -141, 269, -120)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map" unique_id=571237112]
-polygon = PackedVector2Array(-290, -2546, 258, -2432, 74, 617, 843, 523, 690, -2534, 1143, -2215, 1175, 708, -314, 858, -258, 594)
+polygon = PackedVector2Array(33, 50, 33, 190, 255, 83, 362, 188, 662, -46, 839, 67, 907, 365, 1258, 295, 1154, 199, 1627, 140, 1627, 230, 1992, 213, 1974, 854, 1639, 928, 1283, 1009, 1006, 1003, 803, 1122, 433, 1100, 314, 1100, 16, 1001, -75, 1001, 44, 1345, 2062, 1291, 2172, -146, 114, -211)
 
 [node name="Player" parent="." unique_id=631480404 instance=ExtResource("2_xfrkk")]
-position = Vector2(333, -363)
+position = Vector2(820, 689)
 collision_mask = 4
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1668933314]
-
-[node name="Blob" parent="." unique_id=82519219 instance=ExtResource("5_2idjd")]
-position = Vector2(618, -181)
+zoom = Vector2(2, 2)

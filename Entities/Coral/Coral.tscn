@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ca1ab4t72hyfl"]
+
+[ext_resource type="Script" uid="uid://dreligidf5iy7" path="res://Entities/Coral/coral.gd" id="1_i37tb"]
+[ext_resource type="PackedScene" uid="uid://d261gkkdkb6tm" path="res://Entities/Enemy/SharedComponents/EnemyComponent.tscn" id="2_4bgo6"]
+[ext_resource type="Script" uid="uid://blh2lqls8qarb" path="res://Entities/Enemy/StateMachine/state_machine.gd" id="2_n8btm"]
+[ext_resource type="Script" uid="uid://byg6dvlinc8t4" path="res://Entities/Enemy/StateMachine/stunned_state.gd" id="3_tfpdr"]
+[ext_resource type="Script" uid="uid://d7iowxw88n87" path="res://Entities/Coral/coral_defending.gd" id="4_0xt28"]
+[ext_resource type="Script" uid="uid://ddphjprfeqvx7" path="res://Entities/Coral/coral_attacking.gd" id="5_qpxbn"]
+[ext_resource type="Script" uid="uid://cl63wrc6ok6fh" path="res://Entities/Enemy/SharedComponents/stun_bar.gd" id="6_qpxbn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8btm"]
+size = Vector2(32, 32)
+
+[node name="Coral" type="CharacterBody2D" unique_id=1761530019 node_paths=PackedStringArray("enemy_component")]
+script = ExtResource("1_i37tb")
+enemy_component = NodePath("EnemyComponent")
+
+[node name="EnemyComponent" parent="." unique_id=261719826 node_paths=PackedStringArray("state_machine", "stun_bar") instance=ExtResource("2_4bgo6")]
+state_machine = NodePath("../StateMachine")
+stun_bar = NodePath("../StunBarComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=576997838]
+shape = SubResource("RectangleShape2D_n8btm")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=609329130]
+color = Color(0.823785, 0.33788309, 0.54947037, 1)
+polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
+
+[node name="StateMachine" type="Node" parent="." unique_id=2071738999]
+script = ExtResource("2_n8btm")
+metadata/_custom_type_script = "uid://blh2lqls8qarb"
+
+[node name="EnemyStunned" type="Node" parent="StateMachine" unique_id=1652479283]
+script = ExtResource("3_tfpdr")
+metadata/_custom_type_script = "uid://byg6dvlinc8t4"
+
+[node name="CoralDefending" type="Node" parent="StateMachine" unique_id=1576739984]
+script = ExtResource("4_0xt28")
+metadata/_custom_type_script = "uid://d7iowxw88n87"
+
+[node name="CoralAttacking" type="Node" parent="StateMachine" unique_id=458810598]
+script = ExtResource("5_qpxbn")
+metadata/_custom_type_script = "uid://ddphjprfeqvx7"
+
+[node name="StunBarComponent" type="ProgressBar" parent="." unique_id=289539428]
+offset_left = -16.0
+offset_top = -48.0
+offset_right = 16.0
+offset_bottom = -21.0
+script = ExtResource("6_qpxbn")
+metadata/_edit_group_ = true

@@ -1,1 +1,0 @@
-class_name ExtractionPoint extends Area2D

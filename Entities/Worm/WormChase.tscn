@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dbds1fm6dbj1g"]
+
+[ext_resource type="Script" uid="uid://drrxaf7kwilmu" path="res://Entities/Enemy/StateMachine/state.gd" id="1_j1p8d"]
+
+[node name="WormChase" type="Node" unique_id=864573492]
+script = ExtResource("1_j1p8d")
+metadata/_custom_type_script = "uid://drrxaf7kwilmu"
