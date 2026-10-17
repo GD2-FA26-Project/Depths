@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c1eadlrqawygm"]
+
+[ext_resource type="Script" uid="uid://cfubqat516ms0" path="res://Entities/Crab/crab.gd" id="1_p7ao8"]
+[ext_resource type="Script" uid="uid://blh2lqls8qarb" path="res://Entities/Enemy/StateMachine/state_machine.gd" id="2_re0b2"]
+[ext_resource type="Script" uid="uid://byg6dvlinc8t4" path="res://Entities/Enemy/StateMachine/stunned_state.gd" id="3_6sdcf"]
+
+[node name="Crab" type="Node" unique_id=633824923]
+script = ExtResource("1_p7ao8")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1313734950]
+script = ExtResource("2_re0b2")
+metadata/_custom_type_script = "uid://blh2lqls8qarb"
+
+[node name="StunnedState" type="Node" parent="StateMachine" unique_id=35060837]
+script = ExtResource("3_6sdcf")
+metadata/_custom_type_script = "uid://byg6dvlinc8t4"

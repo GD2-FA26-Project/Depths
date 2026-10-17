@@ -13,6 +13,6 @@ func _process(delta: float) -> void:
 	#WASD movement
 	var input = Input.get_vector("left", "right", "up", "down")
 	velocity = input * speed
-	move_and_slide()
+	move_and_slide() 
 		
 	

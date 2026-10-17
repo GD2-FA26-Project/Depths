@@ -9,7 +9,6 @@ var player: Player
 var shoot_dir: Vector2 
 var initial_pos: Vector2
 var cached_position: Vector2
-var core_collected: ExtractionPoint
 
 var foward_velocity: Vector2
 var return_velocity: Vector2

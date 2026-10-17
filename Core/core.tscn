@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bw0hdhei2k6ha"]
+
+[ext_resource type="Script" uid="uid://68dga45i60e4" path="res://Core/core.gd" id="1_7wmpk"]
+
+[node name="Core" type="Area2D" unique_id=106631129]
+script = ExtResource("1_7wmpk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=5434555]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=810279252]

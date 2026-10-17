@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d261gkkdkb6tm"]
+
+[ext_resource type="Script" uid="uid://dx1co8lgn05jc" path="res://Entities/Enemy/SharedComponents/enemy_component.gd" id="1_pshpq"]
+
+[node name="EnemyComponent" type="Node" unique_id=261719826]
+script = ExtResource("1_pshpq")
