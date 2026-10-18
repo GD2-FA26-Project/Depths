@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot_harpoon"):
 		harpoon_shot.emit()
 	
-	if Input.is_action_just_pressed("shoot_weapon"):
+	if Input.is_action_pressed("shoot_weapon"):
 		weapon_shot.emit()
 
 	#WASD movement

@@ -1,5 +1,7 @@
 class_name Stage extends Node2D
 
+@onready var submarine_gun_timer: Timer = $SubmarineGunTimer
+
 @onready var player: Player = $Player
 const HARPOON = preload("uid://b8vxs6ki12cks")
 const WORM = preload("res://Entities/Worm/worm.tscn")
@@ -26,7 +28,7 @@ func shoot_harpoon() -> void:
 
 func shoot_submarine_gun() -> void:
 	var submarine_gun: SubmarineGun = SUBMARINE_GUN.instantiate()
-	var velocity = Vector2.RIGHT.rotated(player.weapon.rotation) * 10
+	var velocity = Vector2.RIGHT.rotated(player.weapon.rotation) * 30
 	submarine_gun.initialize(player.launch_point.global_position, velocity, player.weapon.rotation)
 	add_child(submarine_gun)
 	
@@ -50,6 +52,8 @@ func spawn_coral() -> void:
 
 func shoot_weapon_projectile() -> void:
 	if player.first_weapon_held:
-		shoot_submarine_gun()
+		if submarine_gun_timer.is_stopped():
+			shoot_submarine_gun()
+			submarine_gun_timer.start()
 	else:
 		pass

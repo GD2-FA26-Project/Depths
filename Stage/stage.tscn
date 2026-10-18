@@ -25,3 +25,7 @@ collision_mask = 4
 zoom = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=350083574]
+
+[node name="SubmarineGunTimer" type="Timer" parent="." unique_id=1021113536]
+wait_time = 0.3
+one_shot = true
