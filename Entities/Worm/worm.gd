@@ -24,7 +24,6 @@ func initialize(player: Player) -> void:
 	enemy_component.initialize(player)
 	enemy_component.state_machine.setup(self)
 	enemy_component.state_machine.change_state(WormTravel)
-	print(enemy_component.state_machine.current_state)
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -37,7 +36,6 @@ func _physics_process(delta):
 	if Engine.is_editor_hint():
 		return
 	enemy_component.state_machine.physics_update(delta)
-	print(enemy_component.state_machine.current_state)
 	
 func add_segments() -> void:
 	for child in segment_children.get_children():
