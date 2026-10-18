@@ -9,10 +9,12 @@ const CORAL = preload("uid://ca1ab4t72hyfl")
 const SUBMARINE_GUN = preload("uid://b6juc4ni4vo53")
 var harpoon: Harpoon
 var submarine_bullets: Array[SubmarineGun]
+const CRAB = preload("uid://c1eadlrqawygm")
 
 func _ready() -> void:
 	spawn_coral()
 	spawn_worm()
+	spawn_crab()
 	player.harpoon_shot.connect(shoot_harpoon)
 	player.weapon_shot.connect(shoot_weapon_projectile)
 	
@@ -36,6 +38,8 @@ func shoot_submarine_gun() -> void:
 func handle_submarine_collisions(object: Object, impact_position: Vector2) -> void:
 	if object is WormSegment:
 		object.worm_owner.enemy_component.stun_bar.apply_charge(20)
+	elif object is Crab:
+		object.enemy_component.stun_bar.apply_charge(20)
 	
 func handle_harpoon_collisions(object: Object, impact_position: Vector2) -> void:
 	if object is Core:
@@ -54,6 +58,12 @@ func spawn_coral() -> void:
 	var coral: Coral = CORAL.instantiate()
 	coral.enemy_component.initialize(player, CoralDefending)
 	add_child(coral)
+
+func spawn_crab() -> void:
+	var crab: Crab = CRAB.instantiate()
+	crab.enemy_component.initialize(player, CrabIdle)
+	crab.position = Vector2(-195,571)
+	add_child(crab)
 
 func shoot_weapon_projectile() -> void:
 	if player.first_weapon_held:
