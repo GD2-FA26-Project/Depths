@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cwl4gyfdewm4o" path="res://Entities/Player/player.gd" id="1_l8h54"]
 [ext_resource type="Texture2D" uid="uid://bpg58tgct2d4r" path="res://Weapons/Template/weapon_holster.png" id="2_3uyv8"]
-[ext_resource type="Script" uid="uid://npqhymw8cfwp" path="res://Entities/Player/weapon.gd" id="2_lu8i8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtgmb"]
 size = Vector2(128, 64)
@@ -18,10 +17,12 @@ polygon = PackedVector2Array(-64, -32, -64, 32, 64, 32, 64, -32)
 shape = SubResource("RectangleShape2D_gtgmb")
 
 [node name="Weapon" type="Node2D" parent="." unique_id=1200854702]
-script = ExtResource("2_lu8i8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Weapon" unique_id=2117529270]
 position = Vector2(16, 0)
 rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_3uyv8")
+
+[node name="LaunchPoint" type="Marker2D" parent="Weapon" unique_id=615020085]
+position = Vector2(16, 0)

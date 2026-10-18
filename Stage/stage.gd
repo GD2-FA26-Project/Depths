@@ -9,11 +9,12 @@ const CORAL = preload("uid://ca1ab4t72hyfl")
 func _ready() -> void:
 	spawn_coral()
 	spawn_worm()
-	player.shot_made.connect(shoot_harpoon)
+	player.harpoon_shot.connect(shoot_harpoon)
+	player.weapon_shot.connect(shoot_weapon_projectile)
+	
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("retract_harpoon") and harpoon:
-		harpoon.curr_state = harpoon.STATE.RETRACTING
+	pass
 	
 func shoot_harpoon() -> void:
 	harpoon = HARPOON.instantiate()
@@ -39,3 +40,9 @@ func spawn_coral() -> void:
 	var coral: Coral = CORAL.instantiate()
 	coral.enemy_component.initialize(player)
 	add_child(coral)
+
+func shoot_weapon_projectile() -> void:
+	if player.first_weapon_held:
+		print("first weapon")
+	else:
+		print("second weapon")
