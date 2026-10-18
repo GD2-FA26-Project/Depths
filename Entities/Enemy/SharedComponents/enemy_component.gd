@@ -16,7 +16,7 @@ func _ready() -> void:
 		stun_bar.stunned.connect(handle_stun)
 		
 func _physics_process(delta: float) -> void:
-	pass
+	print(stun_bar.stun_charge)
 
 func handle_stun() -> void:
 	if state_machine.current_state != state_machine.get_state(EnemyStunned):

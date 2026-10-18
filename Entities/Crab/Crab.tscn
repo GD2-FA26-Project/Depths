@@ -1,11 +1,28 @@
 [gd_scene format=3 uid="uid://c1eadlrqawygm"]
 
 [ext_resource type="Script" uid="uid://cfubqat516ms0" path="res://Entities/Crab/crab.gd" id="1_p7ao8"]
+[ext_resource type="Script" uid="uid://dx1co8lgn05jc" path="res://Entities/Enemy/SharedComponents/enemy_component.gd" id="2_e71og"]
 [ext_resource type="Script" uid="uid://blh2lqls8qarb" path="res://Entities/Enemy/StateMachine/state_machine.gd" id="2_re0b2"]
 [ext_resource type="Script" uid="uid://byg6dvlinc8t4" path="res://Entities/Enemy/StateMachine/stunned_state.gd" id="3_6sdcf"]
+[ext_resource type="Script" uid="uid://cr4bxbhj2nhio" path="res://Entities/Crab/crab_chase.gd" id="5_ci8fi"]
+[ext_resource type="Script" uid="uid://bfeaxqm3322bn" path="res://Entities/Crab/crab_idle.gd" id="6_wkjpq"]
+[ext_resource type="Script" uid="uid://cl63wrc6ok6fh" path="res://Entities/Enemy/SharedComponents/stun_bar.gd" id="7_ci8fi"]
 
-[node name="Crab" type="Node" unique_id=633824923]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e71og"]
+size = Vector2(32, 24)
+
+[node name="Crab" type="CharacterBody2D" unique_id=1190127414 node_paths=PackedStringArray("enemy_component")]
+scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_p7ao8")
+enemy_component = NodePath("EnemyComponent")
+
+[node name="EnemyComponent" type="Node" parent="." unique_id=1779796639 node_paths=PackedStringArray("state_machine", "stun_bar")]
+script = ExtResource("2_e71og")
+state_machine = NodePath("../StateMachine")
+stun_bar = NodePath("../StunBarComponent")
+metadata/_custom_type_script = "uid://dx1co8lgn05jc"
 
 [node name="StateMachine" type="Node" parent="." unique_id=1313734950]
 script = ExtResource("2_re0b2")
@@ -14,3 +31,27 @@ metadata/_custom_type_script = "uid://blh2lqls8qarb"
 [node name="StunnedState" type="Node" parent="StateMachine" unique_id=35060837]
 script = ExtResource("3_6sdcf")
 metadata/_custom_type_script = "uid://byg6dvlinc8t4"
+
+[node name="CrabChase" type="Node" parent="StateMachine" unique_id=618349429]
+script = ExtResource("5_ci8fi")
+metadata/_custom_type_script = "uid://drrxaf7kwilmu"
+
+[node name="CrabIdle" type="Node" parent="StateMachine" unique_id=73540703]
+script = ExtResource("6_wkjpq")
+metadata/_custom_type_script = "uid://drrxaf7kwilmu"
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1452178668]
+color = Color(1, 0.64705884, 0, 1)
+polygon = PackedVector2Array(-16, -16, -16, -16, -24, -16, -16, -8, -24, -8, -16, 0, -16, 16, 16, 16, 16, 0, 24, -8, 16, -8, 24, -16, 16, -16, 8, -8, 8, 0, -8, 0, -8, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715795533]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_e71og")
+
+[node name="StunBarComponent" type="ProgressBar" parent="." unique_id=15699396]
+offset_left = -20.0
+offset_top = -36.0
+offset_right = 20.0
+offset_bottom = -9.0
+script = ExtResource("7_ci8fi")
+metadata/_custom_type_script = "uid://cl63wrc6ok6fh"

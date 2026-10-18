@@ -12,7 +12,7 @@ var stun_duration: int = 4
 signal stunned
 
 func _ready() -> void:
-	stun_capacity = stun_capacity
+	max_value = stun_capacity
 
 ## applies the charge to the stun bar, and reduces the amount based on stun resistance
 func apply_charge(amnt: float) -> void:
