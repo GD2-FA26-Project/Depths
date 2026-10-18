@@ -4,6 +4,7 @@ var crab: Crab
 
 func enter() -> void:
 	self.crab = owner_node as Crab
+	crab.velocity = Vector2.ZERO
 	
 func update(delta: float) -> void:
 	pass
