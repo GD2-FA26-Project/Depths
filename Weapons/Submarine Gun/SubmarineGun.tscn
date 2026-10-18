@@ -4,6 +4,7 @@
 
 [node name="SubmarineGun" type="RayCast2D" unique_id=496978644]
 target_position = Vector2(40, 0)
+collision_mask = 2
 script = ExtResource("1_mqj61")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=816626301]

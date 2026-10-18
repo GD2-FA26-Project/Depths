@@ -1,6 +1,5 @@
 class_name Player extends CharacterBody2D
 
-
 @onready var launch_point: Marker2D = $Weapon/LaunchPoint
 @onready var weapon: Node2D = $Weapon
 @export var speed: int = 400
@@ -8,7 +7,6 @@ class_name Player extends CharacterBody2D
 var first_weapon_held: bool = false
 signal harpoon_shot
 signal weapon_shot
-
 	
 func _ready() -> void:
 	pass
