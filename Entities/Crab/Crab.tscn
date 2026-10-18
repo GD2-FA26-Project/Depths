@@ -49,7 +49,9 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_e71og")
 
 [node name="StunBarComponent" type="ProgressBar" parent="." unique_id=15699396]
-offset_right = 4.0
-offset_bottom = 27.0
+offset_left = -20.0
+offset_top = -36.0
+offset_right = 20.0
+offset_bottom = -9.0
 script = ExtResource("7_ci8fi")
 metadata/_custom_type_script = "uid://cl63wrc6ok6fh"

@@ -3,7 +3,7 @@
 class_name Worm extends Node2D
 
 @export var enemy_component: EnemyComponent
-
+@onready var remote_transform_2d: RemoteTransform2D = $RemoteTransform2D
 @onready var segments_root: Node2D = $Segments
 var segments: Array[WormSegment] = []
 
@@ -29,6 +29,7 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	add_segments()
+	enemy_component.stun_bar.reparent(head)
 	
  
 @warning_ignore("unused_parameter")
