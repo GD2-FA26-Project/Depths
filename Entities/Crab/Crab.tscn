@@ -7,10 +7,11 @@
 [ext_resource type="Script" uid="uid://cr4bxbhj2nhio" path="res://Entities/Crab/crab_chase.gd" id="5_ci8fi"]
 [ext_resource type="Script" uid="uid://bfeaxqm3322bn" path="res://Entities/Crab/crab_idle.gd" id="6_wkjpq"]
 [ext_resource type="Script" uid="uid://cl63wrc6ok6fh" path="res://Entities/Enemy/SharedComponents/stun_bar.gd" id="7_ci8fi"]
-[ext_resource type="Script" uid="uid://ba40xsblsuhrm" path="res://Entities/Worm/stun_handler.gd" id="8_wkjpq"]
+[ext_resource type="Script" uid="uid://ba40xsblsuhrm" path="res://Entities/Enemy/SharedComponents/stun_manager.gd" id="8_wkjpq"]
+[ext_resource type="Script" uid="uid://bkjjmosflshy6" path="res://Entities/Enemy/SharedComponents/core_manager.gd" id="9_sqg6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e71og"]
-size = Vector2(32, 24)
+size = Vector2(120, 92)
 
 [node name="Crab" type="CharacterBody2D" unique_id=1190127414 node_paths=PackedStringArray("enemy_component")]
 scale = Vector2(2, 2)
@@ -19,10 +20,11 @@ collision_mask = 0
 script = ExtResource("1_p7ao8")
 enemy_component = NodePath("EnemyComponent")
 
-[node name="EnemyComponent" type="Node" parent="." unique_id=1779796639 node_paths=PackedStringArray("state_machine", "stun_manager")]
+[node name="EnemyComponent" type="Node" parent="." unique_id=1779796639 node_paths=PackedStringArray("state_machine", "stun_manager", "core_manager")]
 script = ExtResource("2_e71og")
 state_machine = NodePath("../StateMachine")
 stun_manager = NodePath("../StunManager")
+core_manager = NodePath("../CoreManager")
 metadata/_custom_type_script = "uid://dx1co8lgn05jc"
 
 [node name="StateMachine" type="Node" parent="." unique_id=1313734950]
@@ -42,11 +44,12 @@ script = ExtResource("6_wkjpq")
 metadata/_custom_type_script = "uid://drrxaf7kwilmu"
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1452178668]
+scale = Vector2(4, 4)
 color = Color(1, 0.64705884, 0, 1)
 polygon = PackedVector2Array(-16, -16, -16, -16, -24, -16, -16, -8, -24, -8, -16, 0, -16, 16, 16, 16, 16, 0, 24, -8, 16, -8, 24, -16, 16, -16, 8, -8, 8, 0, -8, 0, -8, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715795533]
-position = Vector2(0, 4)
+position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_e71og")
 
 [node name="StunBar" type="ProgressBar" parent="." unique_id=15699396 node_paths=PackedStringArray("stun_manager")]
@@ -61,3 +64,18 @@ metadata/_custom_type_script = "uid://cl63wrc6ok6fh"
 [node name="StunManager" type="Node" parent="." unique_id=413549533]
 script = ExtResource("8_wkjpq")
 metadata/_custom_type_script = "uid://ba40xsblsuhrm"
+
+[node name="CoreManager" type="Node" parent="." unique_id=196497059]
+script = ExtResource("9_sqg6m")
+metadata/_custom_type_script = "uid://bkjjmosflshy6"
+
+[node name="CoreMarkers" type="Node2D" parent="." unique_id=1136340531]
+
+[node name="Marker2D" type="Marker2D" parent="CoreMarkers" unique_id=907412239]
+position = Vector2(-48, -12)
+
+[node name="Marker2D2" type="Marker2D" parent="CoreMarkers" unique_id=1074772538]
+position = Vector2(48, -12)
+
+[node name="Marker2D3" type="Marker2D" parent="CoreMarkers" unique_id=1689915207]
+position = Vector2(0, 32)

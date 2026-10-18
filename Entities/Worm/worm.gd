@@ -3,6 +3,7 @@
 class_name Worm extends Node2D
 
 @export var enemy_component: EnemyComponent
+
 @onready var segments_root: Node2D = $Segments
 var segments: Array[WormSegment] = []
 
@@ -11,6 +12,8 @@ var speed: int = 1000
 var segment_length: int = 64
 
 const WORM_SEGMENT = preload("uid://bx7p8ckb4pj6e")
+const CORE = preload("uid://bw0hdhei2k6ha")
+
 
 @export var head: WormSegment = null
 var target: Vector2
@@ -28,6 +31,7 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	add_segments()
+	create_cores()
 	#enemy_component.stun_manager.reparent(head)
 	
  
@@ -61,8 +65,14 @@ func add_segments() -> void:
 func editor_add_segments() -> void:
 	if Engine.is_editor_hint():
 		add_segments()
-	
+		create_cores()
 
-	
-	
+func create_cores() -> void:
+	# equally distributes the cores. Had one more core than needed, added 1 just in case
+	var divide: int = num_segments/enemy_component.core_manager.max_cores + 1
+	for i in segments.size():
+		if i % divide == 0:
+			var core: Core = CORE.instantiate()
+			core.initialize(self)
+			segments[i].add_child(core)
 	
