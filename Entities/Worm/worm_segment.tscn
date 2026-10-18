@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://1h8by4ah43nu" path="res://Entities/Worm/worm_segment.gd" id="1_fh533"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tc2j8"]
-radius = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tc2j8"]
+size = Vector2(64, 64)
 
 [node name="WormSegment" type="CharacterBody2D" unique_id=1461594538]
 collision_layer = 2
@@ -14,4 +14,4 @@ script = ExtResource("1_fh533")
 polygon = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1656564395]
-shape = SubResource("CircleShape2D_tc2j8")
+shape = SubResource("RectangleShape2D_tc2j8")

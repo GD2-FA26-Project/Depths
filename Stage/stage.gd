@@ -8,6 +8,7 @@ const WORM = preload("res://Entities/Worm/worm.tscn")
 const CORAL = preload("uid://ca1ab4t72hyfl")
 const SUBMARINE_GUN = preload("uid://b6juc4ni4vo53")
 var harpoon: Harpoon
+var submarine_bullets: Array[SubmarineGun]
 
 func _ready() -> void:
 	spawn_coral()
@@ -15,7 +16,6 @@ func _ready() -> void:
 	player.harpoon_shot.connect(shoot_harpoon)
 	player.weapon_shot.connect(shoot_weapon_projectile)
 	
-
 func _process(delta: float) -> void:
 	pass
 	
@@ -30,7 +30,12 @@ func shoot_submarine_gun() -> void:
 	var submarine_gun: SubmarineGun = SUBMARINE_GUN.instantiate()
 	var velocity = Vector2.RIGHT.rotated(player.weapon.rotation) * 30
 	submarine_gun.initialize(player.launch_point.global_position, velocity, player.weapon.rotation)
+	submarine_gun.hit_made.connect(handle_submarine_collisions)
 	add_child(submarine_gun)
+
+func handle_submarine_collisions(object: Object, impact_position: Vector2) -> void:
+	if object is WormSegment:
+		object.worm_owner.enemy_component.stun_bar.apply_charge(20)
 	
 func handle_harpoon_collisions(object: Object, impact_position: Vector2) -> void:
 	if object is Core:

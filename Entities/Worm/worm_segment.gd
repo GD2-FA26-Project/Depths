@@ -2,13 +2,16 @@
 ## this class controls a worm segments following behaviour
 class_name WormSegment extends CharacterBody2D
 
+var worm_owner: Worm
 var next: WormSegment = null
-static var speed: int
-static var follow_dist: int
-static var length: int
+
+var speed: int
+var follow_dist: int
+var length: int
 
 ## makes stats consistent for all segments
-static func initialize(worm_speed: int, worm_follow_dist: int, worm_length: int) -> void:
+func initialize(worm_owner: Worm, worm_speed: int, worm_follow_dist: int, worm_length: int) -> void:
+	self.worm_owner = worm_owner
 	speed = worm_speed
 	follow_dist = worm_follow_dist
 	length = worm_length
