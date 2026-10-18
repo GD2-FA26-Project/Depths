@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cwl4gyfdewm4o" path="res://Entities/Player/player.gd" id="1_l8h54"]
 [ext_resource type="Texture2D" uid="uid://bpg58tgct2d4r" path="res://Weapons/Template/weapon_holster.png" id="2_3uyv8"]
+[ext_resource type="Script" uid="uid://bqn186vpaqp4a" path="res://Entities/Player/hull_integrity.gd" id="3_lu8i8"]
+[ext_resource type="Script" uid="uid://bibh3vcntkssu" path="res://Entities/Player/hull_bar.gd" id="4_tekja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtgmb"]
 size = Vector2(128, 64)
@@ -26,3 +28,14 @@ texture = ExtResource("2_3uyv8")
 
 [node name="LaunchPoint" type="Marker2D" parent="Weapon" unique_id=615020085]
 position = Vector2(16, 0)
+
+[node name="HullIntegrity" type="Node" parent="." unique_id=317653899]
+script = ExtResource("3_lu8i8")
+
+[node name="HullBar" type="ProgressBar" parent="." unique_id=1809058181 node_paths=PackedStringArray("hull_integrity")]
+offset_left = -48.0
+offset_top = -64.0
+offset_right = 48.0
+offset_bottom = -37.0
+script = ExtResource("4_tekja")
+hull_integrity = NodePath("../HullIntegrity")

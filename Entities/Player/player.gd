@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+@onready var hull_integrity: HullIntegrity = $HullIntegrity
+
 @onready var launch_point: Marker2D = $Weapon/LaunchPoint
 @onready var weapon: Node2D = $Weapon
 @export var speed: int = 400
@@ -30,5 +32,4 @@ func _process(delta: float) -> void:
 	var input = Input.get_vector("left", "right", "up", "down")
 	velocity = input * speed
 	move_and_slide() 
-		
 	
