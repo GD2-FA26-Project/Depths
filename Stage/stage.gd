@@ -52,7 +52,7 @@ func spawn_worm() -> void:
 
 func spawn_coral() -> void:
 	var coral: Coral = CORAL.instantiate()
-	coral.enemy_component.initialize(player)
+	coral.enemy_component.initialize(player, CoralDefending)
 	add_child(coral)
 
 func shoot_weapon_projectile() -> void:

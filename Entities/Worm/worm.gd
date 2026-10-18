@@ -21,9 +21,9 @@ var target: Vector2
 
 @warning_ignore("shadowed_variable")
 func initialize(player: Player) -> void:
-	enemy_component.initialize(player)
+	enemy_component.initialize(player, WormTravel)
 	enemy_component.state_machine.setup(self)
-	enemy_component.state_machine.change_state(WormTravel)
+	enemy_component.state_machine.change_state(enemy_component.initial_state)
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
