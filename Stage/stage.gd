@@ -25,10 +25,7 @@ func shoot_harpoon() -> void:
 func handle_harpoon_collisions(object: Object, impact_position: Vector2) -> void:
 	if object is Core:
 		extract(object)
-
-#func handle_harpoon_return() -> void:
-	#pass
-
+	
 func extract(object: Core) -> void:
 	harpoon.core_collected = object
 	object.reparent(harpoon)

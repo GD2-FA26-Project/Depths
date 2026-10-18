@@ -23,11 +23,11 @@ func update(delta: float) -> void:
 func physics_update(delta: float) -> void:
 	current_state.physics_update(delta)
 	
-## returns the state or null
+## returns the state or null if not found
 func get_state(state_class: Script) -> State:
 	return _states_by_type.get(state_class)
 
-## starts next state and exits the previous state, otherwise crashes
+## starts next state and exits the previous state
 func change_state(state_class: Script) -> void:
 	var next_state = _states_by_type.get(state_class)
 	

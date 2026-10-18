@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8vxs6ki12cks"]
 
-[ext_resource type="Script" uid="uid://bbsas8dhhn3t" path="res://Weapons/harpoon.gd" id="1_t2dbb"]
+[ext_resource type="Script" uid="uid://bbsas8dhhn3t" path="res://Weapons/Harpoon/harpoon.gd" id="1_t2dbb"]
 
 [node name="Harpoon" type="RayCast2D" unique_id=1588320742]
 target_position = Vector2(40, 0)
