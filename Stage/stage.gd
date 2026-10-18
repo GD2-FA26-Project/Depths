@@ -37,9 +37,9 @@ func shoot_submarine_gun() -> void:
 
 func handle_submarine_collisions(object: Object, impact_position: Vector2) -> void:
 	if object is WormSegment:
-		object.worm_owner.enemy_component.stun_bar.apply_charge(20)
+		object.worm_owner.enemy_component.stun_manager.apply_charge(20)
 	elif object is Crab:
-		object.enemy_component.stun_bar.apply_charge(20)
+		object.enemy_component.stun_manager.apply_charge(20)
 	
 func handle_harpoon_collisions(object: Object, impact_position: Vector2) -> void:
 	if object is Core:

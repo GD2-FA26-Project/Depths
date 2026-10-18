@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://d7iowxw88n87" path="res://Entities/Coral/coral_defending.gd" id="4_0xt28"]
 [ext_resource type="Script" uid="uid://ddphjprfeqvx7" path="res://Entities/Coral/coral_attacking.gd" id="5_qpxbn"]
 [ext_resource type="Script" uid="uid://cl63wrc6ok6fh" path="res://Entities/Enemy/SharedComponents/stun_bar.gd" id="6_qpxbn"]
+[ext_resource type="Script" uid="uid://ba40xsblsuhrm" path="res://Entities/Worm/stun_handler.gd" id="8_3teb0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8btm"]
 size = Vector2(32, 32)
@@ -15,9 +16,9 @@ size = Vector2(32, 32)
 script = ExtResource("1_i37tb")
 enemy_component = NodePath("EnemyComponent")
 
-[node name="EnemyComponent" parent="." unique_id=261719826 node_paths=PackedStringArray("state_machine", "stun_bar") instance=ExtResource("2_4bgo6")]
+[node name="EnemyComponent" parent="." unique_id=261719826 node_paths=PackedStringArray("state_machine", "stun_manager") instance=ExtResource("2_4bgo6")]
 state_machine = NodePath("../StateMachine")
-stun_bar = NodePath("../StunBarComponent")
+stun_manager = NodePath("../StunManager")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=576997838]
 shape = SubResource("RectangleShape2D_n8btm")
@@ -42,10 +43,13 @@ metadata/_custom_type_script = "uid://d7iowxw88n87"
 script = ExtResource("5_qpxbn")
 metadata/_custom_type_script = "uid://ddphjprfeqvx7"
 
-[node name="StunBarComponent" type="ProgressBar" parent="." unique_id=289539428]
-offset_left = -16.0
-offset_top = -48.0
-offset_right = 16.0
-offset_bottom = -21.0
+[node name="StunBar" type="ProgressBar" parent="." unique_id=719800053 node_paths=PackedStringArray("stun_manager")]
+offset_right = 4.0
+offset_bottom = 27.0
 script = ExtResource("6_qpxbn")
-metadata/_edit_group_ = true
+stun_manager = NodePath("../StunManager")
+metadata/_custom_type_script = "uid://cl63wrc6ok6fh"
+
+[node name="StunManager" type="Node" parent="." unique_id=483676904]
+script = ExtResource("8_3teb0")
+metadata/_custom_type_script = "uid://ba40xsblsuhrm"

@@ -28,7 +28,7 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	add_segments()
-	enemy_component.stun_bar.reparent(head)
+	#enemy_component.stun_manager.reparent(head)
 	
  
 @warning_ignore("unused_parameter")

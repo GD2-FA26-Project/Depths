@@ -16,5 +16,5 @@ func physics_update(delta: float) -> void:
 	pass
 		
 func exit() -> void:
-	enemy.stun_bar.reset()
+	enemy.stun_manager.reset()
 	

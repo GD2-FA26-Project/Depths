@@ -5,218 +5,370 @@
 [ext_resource type="Script" uid="uid://blh2lqls8qarb" path="res://Entities/Enemy/StateMachine/state_machine.gd" id="3_4wljf"]
 [ext_resource type="PackedScene" uid="uid://bx7p8ckb4pj6e" path="res://Entities/Worm/worm_segment.tscn" id="3_p2yo6"]
 [ext_resource type="Script" uid="uid://byg6dvlinc8t4" path="res://Entities/Enemy/StateMachine/stunned_state.gd" id="4_764uf"]
+[ext_resource type="Script" uid="uid://1h8by4ah43nu" path="res://Entities/Worm/worm_segment.gd" id="4_cxpll"]
 [ext_resource type="Script" uid="uid://csndkmfwbq26p" path="res://Entities/Worm/States/worm_travel.gd" id="6_pv6hx"]
 [ext_resource type="Script" uid="uid://vbtwwxicnnrq" path="res://Entities/Worm/States/worm_chase.gd" id="7_fdt0y"]
 [ext_resource type="Script" uid="uid://cl63wrc6ok6fh" path="res://Entities/Enemy/SharedComponents/stun_bar.gd" id="8_3ok8g"]
+[ext_resource type="Script" uid="uid://ba40xsblsuhrm" path="res://Entities/Worm/stun_handler.gd" id="9_p2yo6"]
 
 [node name="Worm" type="Node2D" unique_id=118016555 node_paths=PackedStringArray("enemy_component", "head")]
 script = ExtResource("1_va2e6")
 enemy_component = NodePath("EnemyComponent")
-head = NodePath("Segments/@CharacterBody2D@28158")
+head = NodePath("Segments/WormSegment")
 
-[node name="EnemyComponent" parent="." unique_id=261719826 node_paths=PackedStringArray("state_machine", "stun_bar") instance=ExtResource("2_rmi03")]
+[node name="EnemyComponent" parent="." unique_id=261719826 node_paths=PackedStringArray("state_machine", "stun_manager") instance=ExtResource("2_rmi03")]
 state_machine = NodePath("../StateMachine")
-stun_bar = NodePath("../StunBarComponent")
+stun_manager = NodePath("../StunManager")
 
 [node name="Segments" type="Node2D" parent="." unique_id=219570097]
 
-[node name="@CharacterBody2D@28158" parent="Segments" unique_id=1461594538 instance=ExtResource("3_p2yo6")]
+[node name="WormSegment" type="CharacterBody2D" parent="Segments" unique_id=1461594538 instance=ExtResource("3_p2yo6")]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28159" parent="Segments" unique_id=1493297078 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122384" type="CharacterBody2D" parent="Segments" unique_id=1621524843 instance=ExtResource("3_p2yo6")]
 position = Vector2(64, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28160" parent="Segments" unique_id=87938864 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122385" type="CharacterBody2D" parent="Segments" unique_id=1482359390 instance=ExtResource("3_p2yo6")]
 position = Vector2(128, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28161" parent="Segments" unique_id=1609970098 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122386" type="CharacterBody2D" parent="Segments" unique_id=796960190 instance=ExtResource("3_p2yo6")]
 position = Vector2(192, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28162" parent="Segments" unique_id=1845332612 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122387" type="CharacterBody2D" parent="Segments" unique_id=195802330 instance=ExtResource("3_p2yo6")]
 position = Vector2(256, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28163" parent="Segments" unique_id=1189117087 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122388" type="CharacterBody2D" parent="Segments" unique_id=867587057 instance=ExtResource("3_p2yo6")]
 position = Vector2(320, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28164" parent="Segments" unique_id=1833232 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122389" type="CharacterBody2D" parent="Segments" unique_id=474274204 instance=ExtResource("3_p2yo6")]
 position = Vector2(384, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28165" parent="Segments" unique_id=515823730 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122390" type="CharacterBody2D" parent="Segments" unique_id=1378824406 instance=ExtResource("3_p2yo6")]
 position = Vector2(448, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28166" parent="Segments" unique_id=113243009 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122391" type="CharacterBody2D" parent="Segments" unique_id=1108000992 instance=ExtResource("3_p2yo6")]
 position = Vector2(512, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28167" parent="Segments" unique_id=1749362379 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122392" type="CharacterBody2D" parent="Segments" unique_id=857355706 instance=ExtResource("3_p2yo6")]
 position = Vector2(576, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28168" parent="Segments" unique_id=1059868668 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122393" type="CharacterBody2D" parent="Segments" unique_id=216070585 instance=ExtResource("3_p2yo6")]
 position = Vector2(640, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28169" parent="Segments" unique_id=1678303962 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122394" type="CharacterBody2D" parent="Segments" unique_id=570074028 instance=ExtResource("3_p2yo6")]
 position = Vector2(704, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28170" parent="Segments" unique_id=1343013007 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122395" type="CharacterBody2D" parent="Segments" unique_id=1516096560 instance=ExtResource("3_p2yo6")]
 position = Vector2(768, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28171" parent="Segments" unique_id=1066679944 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122396" type="CharacterBody2D" parent="Segments" unique_id=631070492 instance=ExtResource("3_p2yo6")]
 position = Vector2(832, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28172" parent="Segments" unique_id=729716609 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122397" type="CharacterBody2D" parent="Segments" unique_id=835772560 instance=ExtResource("3_p2yo6")]
 position = Vector2(896, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28173" parent="Segments" unique_id=1929426675 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122398" type="CharacterBody2D" parent="Segments" unique_id=663066475 instance=ExtResource("3_p2yo6")]
 position = Vector2(960, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28174" parent="Segments" unique_id=367627520 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122399" type="CharacterBody2D" parent="Segments" unique_id=1131913109 instance=ExtResource("3_p2yo6")]
 position = Vector2(1024, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28175" parent="Segments" unique_id=2094602383 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122400" type="CharacterBody2D" parent="Segments" unique_id=1607894845 instance=ExtResource("3_p2yo6")]
 position = Vector2(1088, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28176" parent="Segments" unique_id=924238021 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122401" type="CharacterBody2D" parent="Segments" unique_id=1418649729 instance=ExtResource("3_p2yo6")]
 position = Vector2(1152, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28177" parent="Segments" unique_id=1266737124 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122402" type="CharacterBody2D" parent="Segments" unique_id=1340235264 instance=ExtResource("3_p2yo6")]
 position = Vector2(1216, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28178" parent="Segments" unique_id=1201647844 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122403" type="CharacterBody2D" parent="Segments" unique_id=1017270224 instance=ExtResource("3_p2yo6")]
 position = Vector2(1280, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28179" parent="Segments" unique_id=1449472742 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122404" type="CharacterBody2D" parent="Segments" unique_id=1374602402 instance=ExtResource("3_p2yo6")]
 position = Vector2(1344, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28180" parent="Segments" unique_id=171856739 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122405" type="CharacterBody2D" parent="Segments" unique_id=880216093 instance=ExtResource("3_p2yo6")]
 position = Vector2(1408, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28181" parent="Segments" unique_id=1313013206 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122406" type="CharacterBody2D" parent="Segments" unique_id=827595327 instance=ExtResource("3_p2yo6")]
 position = Vector2(1472, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28182" parent="Segments" unique_id=2118570378 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122407" type="CharacterBody2D" parent="Segments" unique_id=256208661 instance=ExtResource("3_p2yo6")]
 position = Vector2(1536, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28183" parent="Segments" unique_id=1478925353 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122408" type="CharacterBody2D" parent="Segments" unique_id=853658324 instance=ExtResource("3_p2yo6")]
 position = Vector2(1600, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28184" parent="Segments" unique_id=431976425 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122409" type="CharacterBody2D" parent="Segments" unique_id=1043921488 instance=ExtResource("3_p2yo6")]
 position = Vector2(1664, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28185" parent="Segments" unique_id=602618718 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122410" type="CharacterBody2D" parent="Segments" unique_id=1010452529 instance=ExtResource("3_p2yo6")]
 position = Vector2(1728, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28186" parent="Segments" unique_id=1555541522 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122411" type="CharacterBody2D" parent="Segments" unique_id=1596061682 instance=ExtResource("3_p2yo6")]
 position = Vector2(1792, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28187" parent="Segments" unique_id=1351674319 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122412" type="CharacterBody2D" parent="Segments" unique_id=1865926364 instance=ExtResource("3_p2yo6")]
 position = Vector2(1856, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28188" parent="Segments" unique_id=1651643769 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122413" type="CharacterBody2D" parent="Segments" unique_id=795496241 instance=ExtResource("3_p2yo6")]
 position = Vector2(1920, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28189" parent="Segments" unique_id=571161203 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122414" type="CharacterBody2D" parent="Segments" unique_id=1781293926 instance=ExtResource("3_p2yo6")]
 position = Vector2(1984, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28190" parent="Segments" unique_id=676851491 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122415" type="CharacterBody2D" parent="Segments" unique_id=224769747 instance=ExtResource("3_p2yo6")]
 position = Vector2(2048, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28191" parent="Segments" unique_id=1369444088 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122416" type="CharacterBody2D" parent="Segments" unique_id=962492326 instance=ExtResource("3_p2yo6")]
 position = Vector2(2112, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28192" parent="Segments" unique_id=1361816578 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122417" type="CharacterBody2D" parent="Segments" unique_id=988517866 instance=ExtResource("3_p2yo6")]
 position = Vector2(2176, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28193" parent="Segments" unique_id=94930051 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122418" type="CharacterBody2D" parent="Segments" unique_id=1489431612 instance=ExtResource("3_p2yo6")]
 position = Vector2(2240, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28194" parent="Segments" unique_id=1500812887 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122419" type="CharacterBody2D" parent="Segments" unique_id=1720542678 instance=ExtResource("3_p2yo6")]
 position = Vector2(2304, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28195" parent="Segments" unique_id=659735012 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122420" type="CharacterBody2D" parent="Segments" unique_id=2060272595 instance=ExtResource("3_p2yo6")]
 position = Vector2(2368, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28196" parent="Segments" unique_id=2017435561 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122421" type="CharacterBody2D" parent="Segments" unique_id=196423594 instance=ExtResource("3_p2yo6")]
 position = Vector2(2432, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28197" parent="Segments" unique_id=1809807003 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122422" type="CharacterBody2D" parent="Segments" unique_id=1470973751 instance=ExtResource("3_p2yo6")]
 position = Vector2(2496, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28198" parent="Segments" unique_id=1374879637 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122423" type="CharacterBody2D" parent="Segments" unique_id=175657239 instance=ExtResource("3_p2yo6")]
 position = Vector2(2560, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28199" parent="Segments" unique_id=102105615 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122424" type="CharacterBody2D" parent="Segments" unique_id=1444251837 instance=ExtResource("3_p2yo6")]
 position = Vector2(2624, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28200" parent="Segments" unique_id=145623784 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122425" type="CharacterBody2D" parent="Segments" unique_id=660837507 instance=ExtResource("3_p2yo6")]
 position = Vector2(2688, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28201" parent="Segments" unique_id=311954927 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122426" type="CharacterBody2D" parent="Segments" unique_id=1136851341 instance=ExtResource("3_p2yo6")]
 position = Vector2(2752, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28202" parent="Segments" unique_id=1245488225 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122427" type="CharacterBody2D" parent="Segments" unique_id=159761680 instance=ExtResource("3_p2yo6")]
 position = Vector2(2816, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28203" parent="Segments" unique_id=1011659965 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122428" type="CharacterBody2D" parent="Segments" unique_id=1484148596 instance=ExtResource("3_p2yo6")]
 position = Vector2(2880, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28204" parent="Segments" unique_id=436344343 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122429" type="CharacterBody2D" parent="Segments" unique_id=1834429320 instance=ExtResource("3_p2yo6")]
 position = Vector2(2944, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28205" parent="Segments" unique_id=995572371 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122430" type="CharacterBody2D" parent="Segments" unique_id=782362862 instance=ExtResource("3_p2yo6")]
 position = Vector2(3008, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28206" parent="Segments" unique_id=1771324490 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122431" type="CharacterBody2D" parent="Segments" unique_id=5866098 instance=ExtResource("3_p2yo6")]
 position = Vector2(3072, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
-[node name="@CharacterBody2D@28207" parent="Segments" unique_id=341165896 instance=ExtResource("3_p2yo6")]
+[node name="@CharacterBody2D@122432" type="CharacterBody2D" parent="Segments" unique_id=287027463 instance=ExtResource("3_p2yo6")]
 position = Vector2(3136, 0)
 rotation = 3.1415925
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_cxpll")
 
 [node name="StateMachine" type="Node" parent="." unique_id=1519008360]
 script = ExtResource("3_4wljf")
@@ -234,10 +386,14 @@ metadata/_custom_type_script = "uid://csndkmfwbq26p"
 script = ExtResource("7_fdt0y")
 metadata/_custom_type_script = "uid://vbtwwxicnnrq"
 
-[node name="StunBarComponent" type="ProgressBar" parent="." unique_id=641772198]
+[node name="StunBar" type="ProgressBar" parent="." unique_id=641772198 node_paths=PackedStringArray("stun_manager")]
 offset_left = -59.0
 offset_top = -60.0
 offset_right = 55.0
 offset_bottom = -33.0
 script = ExtResource("8_3ok8g")
+stun_manager = NodePath("../StunManager")
 metadata/_custom_type_script = "uid://cl63wrc6ok6fh"
+
+[node name="StunManager" type="Node" parent="." unique_id=532627706]
+script = ExtResource("9_p2yo6")

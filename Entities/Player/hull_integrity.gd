@@ -20,4 +20,5 @@ func apply_damage(amnt: float) -> void:
 		died.emit()
 
 func reset() -> void:
-	hull_health = 0
+	hull_health = hull_capacity
+	hull_health_changed.emit(0, hull_capacity)

@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cr4bxbhj2nhio" path="res://Entities/Crab/crab_chase.gd" id="5_ci8fi"]
 [ext_resource type="Script" uid="uid://bfeaxqm3322bn" path="res://Entities/Crab/crab_idle.gd" id="6_wkjpq"]
 [ext_resource type="Script" uid="uid://cl63wrc6ok6fh" path="res://Entities/Enemy/SharedComponents/stun_bar.gd" id="7_ci8fi"]
+[ext_resource type="Script" uid="uid://ba40xsblsuhrm" path="res://Entities/Worm/stun_handler.gd" id="8_wkjpq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e71og"]
 size = Vector2(32, 24)
@@ -18,10 +19,10 @@ collision_mask = 0
 script = ExtResource("1_p7ao8")
 enemy_component = NodePath("EnemyComponent")
 
-[node name="EnemyComponent" type="Node" parent="." unique_id=1779796639 node_paths=PackedStringArray("state_machine", "stun_bar")]
+[node name="EnemyComponent" type="Node" parent="." unique_id=1779796639 node_paths=PackedStringArray("state_machine", "stun_manager")]
 script = ExtResource("2_e71og")
 state_machine = NodePath("../StateMachine")
-stun_bar = NodePath("../StunBarComponent")
+stun_manager = NodePath("../StunManager")
 metadata/_custom_type_script = "uid://dx1co8lgn05jc"
 
 [node name="StateMachine" type="Node" parent="." unique_id=1313734950]
@@ -48,10 +49,15 @@ polygon = PackedVector2Array(-16, -16, -16, -16, -24, -16, -16, -8, -24, -8, -16
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_e71og")
 
-[node name="StunBarComponent" type="ProgressBar" parent="." unique_id=15699396]
+[node name="StunBar" type="ProgressBar" parent="." unique_id=15699396 node_paths=PackedStringArray("stun_manager")]
 offset_left = -20.0
 offset_top = -36.0
 offset_right = 20.0
 offset_bottom = -9.0
 script = ExtResource("7_ci8fi")
+stun_manager = NodePath("../StunManager")
 metadata/_custom_type_script = "uid://cl63wrc6ok6fh"
+
+[node name="StunManager" type="Node" parent="." unique_id=413549533]
+script = ExtResource("8_wkjpq")
+metadata/_custom_type_script = "uid://ba40xsblsuhrm"
