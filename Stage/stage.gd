@@ -61,7 +61,7 @@ func spawn_coral() -> void:
 
 func spawn_crab() -> void:
 	var crab: Crab = CRAB.instantiate()
-	crab.enemy_component.initialize(player, CrabIdle)
+	crab.initialize(player)
 	crab.position = Vector2(-195,571)
 	add_child(crab)
 

@@ -14,7 +14,7 @@ func physics_update(delta: float) -> void:
 		crab.enemy_component.state_machine.change_state(CrabChase)
 		
 func exit() -> void:
-	pass
+	crab.velocity = Vector2.ZERO
 	
 func get_dist_to_player() -> float:
 	var player: Player = crab.enemy_component.player
