@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://d3o4yrubx3c3"]
+
+[ext_resource type="Script" uid="uid://b176o57oolbhn" path="res://UI/hud/hud.gd" id="1_hud"]
+
+[sub_resource type="Theme" id="Theme_hud"]
+default_font_size = 28
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar_background"]
+bg_color = Color(0.08, 0.08, 0.08, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar_fill"]
+bg_color = Color(0.8, 0.8, 0.8, 1)
+
+[node name="HUD" type="CanvasLayer" unique_id=1261487009]
+script = ExtResource("1_hud")
+
+[node name="Screen" type="Control" parent="." unique_id=1224217222]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_hud")
+
+[node name="Hull" type="PanelContainer" parent="Screen" unique_id=188770058]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 400.0
+offset_bottom = 158.0
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="Screen/Hull" unique_id=1758315149]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Column" type="VBoxContainer" parent="Screen/Hull/Margin" unique_id=67028739]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="HullLabel" type="Label" parent="Screen/Hull/Margin/Column" unique_id=1652281476]
+layout_mode = 2
+text = "HULL  100%"
+
+[node name="HullBar" type="ProgressBar" parent="Screen/Hull/Margin/Column" unique_id=1441755654]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bar_background")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bar_fill")
+value = 100.0
+show_percentage = false
+
+[node name="DiveInfo" type="PanelContainer" parent="Screen" unique_id=1741023238]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = 158.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="Screen/DiveInfo" unique_id=1706573939]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Column" type="VBoxContainer" parent="Screen/DiveInfo/Margin" unique_id=27201121]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="ResourcesLabel" type="Label" parent="Screen/DiveInfo/Margin/Column" unique_id=752318634]
+layout_mode = 2
+text = "Resources: 0"
+
+[node name="DepthLabel" type="Label" parent="Screen/DiveInfo/Margin/Column" unique_id=1434197537]
+layout_mode = 2
+text = "Depth: 0 m"
+
+[node name="WeaponSlot" type="VBoxContainer" parent="Screen" unique_id=1748355726]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 804.0
+offset_right = 293.0
+offset_bottom = 1044.0
+
+[node name="Slot2" type="PanelContainer" parent="Screen/WeaponSlot" unique_id=534493675]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="Screen/WeaponSlot/Slot2" unique_id=2095246006]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Column" type="VBoxContainer" parent="Screen/WeaponSlot/Slot2/Margin" unique_id=114219168]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="SlotLabel" type="Label" parent="Screen/WeaponSlot/Slot2/Margin/Column" unique_id=350558604]
+layout_mode = 2
+text = "WEAPON SLOT 2"
+
+[node name="WeaponName" type="Label" parent="Screen/WeaponSlot/Slot2/Margin/Column" unique_id=776108351]
+layout_mode = 2
+text = "Submarine Gun"
+
+[node name="Slot1" type="PanelContainer" parent="Screen/WeaponSlot" unique_id=556939090]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="Screen/WeaponSlot/Slot1" unique_id=1524355600]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Column" type="VBoxContainer" parent="Screen/WeaponSlot/Slot1/Margin" unique_id=1763616300]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="SlotLabel" type="Label" parent="Screen/WeaponSlot/Slot1/Margin/Column" unique_id=1326028599]
+layout_mode = 2
+text = "WEAPON SLOT 1"
+
+[node name="WeaponName" type="Label" parent="Screen/WeaponSlot/Slot1/Margin/Column" unique_id=973803275]
+layout_mode = 2
+text = "Harpoon"
+
+[node name="Oxygen" type="PanelContainer" parent="Screen" unique_id=1137912619]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -360.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="Screen/Oxygen" unique_id=750128537]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Column" type="VBoxContainer" parent="Screen/Oxygen/Margin" unique_id=97770358]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Screen/Oxygen/Margin/Column" unique_id=884213885]
+layout_mode = 2
+text = "OXYGEN"
+horizontal_alignment = 1
+
+[node name="OxygenBar" type="ProgressBar" parent="Screen/Oxygen/Margin/Column" unique_id=1603877807]
+custom_minimum_size = Vector2(64, 180)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bar_background")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bar_fill")
+value = 100.0
+fill_mode = 3
+show_percentage = false
+
+[node name="OxygenLabel" type="Label" parent="Screen/Oxygen/Margin/Column" unique_id=932289180]
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 1

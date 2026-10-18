@@ -1,5 +1,23 @@
 class_name Stage extends Node2D
 
+@export_range(1.0, 100.0) var pixels_per_meter: float = 10.0
+
+
+# Sample cell data until the room generator supplies the actual layout.
+@export var map_origin: Vector2 = Vector2.ZERO
+@export var map_cell_size: Vector2 = Vector2(700.0, 500.0)
+@export var map_cells: Array[Vector2i] = [
+	Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0),
+	Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1),
+	Vector2i(1, 2), Vector2i(2, 2),
+]
+@export var current_objectives: PackedStringArray = ["Explore the connected cells.", "Return to the surface base."]
+@export var collected_items: PackedStringArray = []
+
+@onready var game_menus: GameMenus = $GameMenus
+@onready var hud: GameHUD = $HUD
+var starting_depth_y: float
+
 @onready var submarine_gun_timer: Timer = $SubmarineGunTimer
 
 @onready var player: Player = $Player
@@ -12,14 +30,17 @@ var submarine_bullets: Array[SubmarineGun]
 const CRAB = preload("uid://c1eadlrqawygm")
 
 func _ready() -> void:
+	starting_depth_y = player.global_position.y
+	game_menus.map_opened.connect(_update_map_menu)
+	game_menus.menu_opened.connect(_update_pause_menu)
 	spawn_coral()
 	spawn_worm()
 	spawn_crab()
 	player.harpoon_shot.connect(shoot_harpoon)
 	player.weapon_shot.connect(shoot_weapon_projectile)
 	
-func _process(delta: float) -> void:
-	pass
+func _process(_delta: float) -> void:
+	hud.set_depth(get_depth_meters())
 	
 func shoot_harpoon() -> void:
 	harpoon = HARPOON.instantiate()
@@ -72,3 +93,18 @@ func shoot_weapon_projectile() -> void:
 			submarine_gun_timer.start()
 	else:
 		pass
+
+
+func get_depth_meters() -> float:
+	return maxf((player.global_position.y - starting_depth_y) / pixels_per_meter, 0.0)
+
+
+func _update_map_menu() -> void:
+	var cell_size := Vector2(maxf(map_cell_size.x, 1.0), maxf(map_cell_size.y, 1.0))
+	var grid_position: Vector2 = (player.global_position - map_origin) / cell_size
+	var player_cell := Vector2i(floori(grid_position.x), floori(grid_position.y))
+	game_menus.update_map(map_cells, player_cell)
+
+
+func _update_pause_menu() -> void:
+	game_menus.update_menu(current_objectives, collected_items, get_depth_meters(), hud.resource_count)
