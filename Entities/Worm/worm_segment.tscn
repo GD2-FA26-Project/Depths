@@ -13,6 +13,7 @@ script = ExtResource("1_fh533")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=166130905]
 texture = ExtResource("2_siv0q")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1656564395]
 position = Vector2(4, 0)

@@ -1,3 +1,4 @@
+@tool
 class_name Core extends Area2D
 
 ## the enemy or entity who has the core

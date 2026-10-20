@@ -2,7 +2,6 @@ class_name Stage extends Node2D
 
 @export_range(1.0, 100.0) var pixels_per_meter: float = 10.0
 
-
 # Sample cell data until the room generator supplies the actual layout.
 @export var map_origin: Vector2 = Vector2.ZERO
 @export var map_cell_size: Vector2 = Vector2(700.0, 500.0)

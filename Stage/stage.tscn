@@ -2,32 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b0xy6tnnn2jj7" path="res://Stage/stage.gd" id="1_4qfnv"]
 [ext_resource type="PackedScene" uid="uid://cfunlmpjrl4tt" path="res://Entities/Player/player.tscn" id="2_xfrkk"]
-
-[ext_resource type="PackedScene" path="res://UI/hud/hud.tscn" id="3_hud"]
-
+[ext_resource type="PackedScene" uid="uid://d3o4yrubx3c3" path="res://UI/hud/hud.tscn" id="3_hud"]
 [ext_resource type="PackedScene" path="res://UI/game_menus/game_menus.tscn" id="4_menus"]
+[ext_resource type="PackedScene" uid="uid://cosrblun40j6m" path="res://Prototype Zone/Zone.tscn" id="5_2idjd"]
 
 [node name="Stage" type="Node2D" unique_id=1574512219]
 script = ExtResource("1_4qfnv")
-
-[node name="Map" type="StaticBody2D" parent="." unique_id=516735834]
-light_mask = 4
-visibility_layer = 9
-collision_layer = 4
-
-[node name="Map" type="Polygon2D" parent="Map" unique_id=370363785]
-color = Color(0.2538426, 0.2538428, 0.25384274, 1)
-polygon = PackedVector2Array(17, 47, 17, 224, 241, 105, 394, 271, 646, -13, 830, 131, 832, 389, 1421, 308, 1230, 268, 1430, 182, 1519, 182, 1668, 357, 1833, 252, 2008, 261, 1933, 869, 1582, 869, 1563, 957, 1016, 939, 1014, 939, 867, 1067, 865, 1067, 797, 1062, 381, 1062, 381, 1104, 166, 997, -127, 974, -29, 1139, 252, 1139, 548, 1332, 839, 1265, 1458, 1239, 1461, 1106, 2019, 1106, 2066, 813, 2110, 278, 2103, 24, 1714, 22, 1340, 52, 969, 47, 737, -141, 269, -120)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map" unique_id=571237112]
-polygon = PackedVector2Array(33, 50, 33, 190, 255, 83, 362, 188, 662, -46, 839, 67, 907, 365, 1258, 295, 1154, 199, 1627, 140, 1627, 230, 1992, 213, 1974, 854, 1639, 928, 1283, 1009, 1006, 1003, 803, 1122, 433, 1100, 314, 1100, 16, 1001, -75, 1001, 44, 1345, 2062, 1291, 2172, -146, 114, -211)
-
-[node name="Player" parent="." unique_id=631480404 instance=ExtResource("2_xfrkk")]
-position = Vector2(820, 689)
-collision_mask = 4
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1668933314]
-zoom = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=350083574]
 
@@ -35,6 +15,16 @@ zoom = Vector2(2, 2)
 wait_time = 0.3
 one_shot = true
 
-[node name="HUD" parent="." instance=ExtResource("3_hud")]
+[node name="HUD" parent="." unique_id=534141544 instance=ExtResource("3_hud")]
 
-[node name="GameMenus" parent="." instance=ExtResource("4_menus")]
+[node name="GameMenus" parent="." unique_id=1103009967 instance=ExtResource("4_menus")]
+
+[node name="Zone" parent="." unique_id=1741042918 instance=ExtResource("5_2idjd")]
+position = Vector2(-376, 360)
+
+[node name="Player" parent="." unique_id=631480404 groups=["player"] instance=ExtResource("2_xfrkk")]
+position = Vector2(565.4768, -1233.3147)
+collision_mask = 4
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1668933314]
+zoom = Vector2(2, 2)
