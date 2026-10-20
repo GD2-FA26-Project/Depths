@@ -58,17 +58,22 @@ func shoot_submarine_gun() -> void:
 
 func handle_submarine_collisions(object: Object, impact_position: Vector2) -> void:
 	if object is WormSegment:
-		object.worm_owner.enemy_component.stun_bar.apply_charge(20)
+		object.worm_owner.enemy_component.stun_manager.apply_charge(20)
 	elif object is Crab:
-		object.enemy_component.stun_bar.apply_charge(20)
+		object.enemy_component.stun_manager.apply_charge(20)
 	
 func handle_harpoon_collisions(object: Object, impact_position: Vector2) -> void:
 	if object is Core:
 		extract(object)
 	
-func extract(object: Core) -> void:
-	harpoon.core_collected = object
-	object.reparent(harpoon)
+func extract(core: Core) -> void:
+	if !core.extracted:
+		var enemy: EnemyComponent = core.core_owner.get_node("EnemyComponent")
+		if enemy: 
+			enemy.core_manager.remove_core()
+			core.extracted = true
+			print(enemy.core_manager.cores_remaining)
+		core.reparent(harpoon)
 
 func spawn_worm() -> void:
 	var worm: Worm = WORM.instantiate()

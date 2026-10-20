@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dxchhkap0f10s"]
+
+[ext_resource type="Texture2D" uid="uid://c1rlo8pglmeqx" path="res://Entities/CoralEn/fluttermane.png" id="1_3oylf"]
+[ext_resource type="Script" uid="uid://tyqssn0bfv55" path="res://Entities/CoralEn/turret.gd" id="1_tjdg3"]
+
+[node name="Turret" type="Node2D" unique_id=1374251987]
+script = ExtResource("1_tjdg3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=926492020]
+texture = ExtResource("1_3oylf")

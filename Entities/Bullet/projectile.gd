@@ -1,0 +1,16 @@
+extends CharacterBody2D
+
+@export var SPEED = 100
+
+var dir : float
+var spawnPos : Vector2
+var spawnRot : float
+
+func _physics_process(delta: float):
+	velocity = Vector2(0, -SPEED). rotated(dir)
+	move_and_slide()
+
+func _ready():
+	global_position = spawnPos
+	global_rotation = spawnRot
+	
