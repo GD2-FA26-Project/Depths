@@ -3,7 +3,7 @@ class_name CoreManager extends Node
 ## cores remaining until death
 var cores_remaining: float
 ## maximum stun cores that the enemy has
-@export var max_cores: float = 4
+@export var max_cores: float = 10
 
 signal died
 signal core_removed()

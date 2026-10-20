@@ -19,6 +19,7 @@ func initialize(worm_owner: Worm, worm_speed: int, worm_follow_dist: int, worm_l
 	length = worm_length
 
 func _ready() -> void:
+	sprite_2d.flip_h = false
 	sprite_2d.texture = sprite
 
 func _process(delta: float) -> void:

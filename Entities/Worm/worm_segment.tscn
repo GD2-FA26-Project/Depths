@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bx7p8ckb4pj6e"]
 
 [ext_resource type="Script" uid="uid://1h8by4ah43nu" path="res://Entities/Worm/worm_segment.gd" id="1_fh533"]
-[ext_resource type="Texture2D" uid="uid://cdfeivtx1mlga" path="res://Assets/worm_head.webp" id="2_siv0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tc2j8"]
 size = Vector2(72, 64)
@@ -12,8 +11,6 @@ collision_mask = 0
 script = ExtResource("1_fh533")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=166130905]
-texture = ExtResource("2_siv0q")
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1656564395]
 position = Vector2(4, 0)

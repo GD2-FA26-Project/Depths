@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d3o4yrubx3c3" path="res://UI/hud/hud.tscn" id="3_hud"]
 [ext_resource type="PackedScene" path="res://UI/game_menus/game_menus.tscn" id="4_menus"]
 [ext_resource type="PackedScene" uid="uid://cosrblun40j6m" path="res://Prototype Zone/Zone.tscn" id="5_2idjd"]
+[ext_resource type="PackedScene" uid="uid://cvpt483qesvcr" path="res://Entities/CoralEn/turret.tscn" id="6_4qfnv"]
 
 [node name="Stage" type="Node2D" unique_id=1574512219]
 script = ExtResource("1_4qfnv")
@@ -28,3 +29,6 @@ collision_mask = 4
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1668933314]
 zoom = Vector2(2, 2)
+
+[node name="Turret" parent="." unique_id=1374251987 instance=ExtResource("6_4qfnv")]
+position = Vector2(2989, -214)

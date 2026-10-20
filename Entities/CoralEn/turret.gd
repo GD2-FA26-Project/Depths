@@ -1,5 +1,4 @@
-
-extends Node2D
+class_name Turret extends Node2D
 
 const BULLET = preload("res://Entities/Bullet/projectile.tscn")
 
