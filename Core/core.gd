@@ -1,3 +1,13 @@
 class_name Core extends Area2D
 
-@export var core_data: CoreData
+## the enemy or entity who has the core
+var core_owner: Node
+## false by default, true when harpoon is harvesting the core.
+## ensures the same core isn't extracted multiple times per frame.
+var extracted: bool = false
+
+func _ready() -> void:
+	assert(core_owner)
+
+func initialize(owner: Node) -> void:
+	self.core_owner = owner
