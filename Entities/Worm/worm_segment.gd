@@ -8,6 +8,8 @@ var next: WormSegment = null
 var speed: int
 var follow_dist: int
 var length: int
+var sprite: Texture2D
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 ## makes stats consistent for all segments
 func initialize(worm_owner: Worm, worm_speed: int, worm_follow_dist: int, worm_length: int) -> void:
@@ -17,7 +19,7 @@ func initialize(worm_owner: Worm, worm_speed: int, worm_follow_dist: int, worm_l
 	length = worm_length
 
 func _ready() -> void:
-	pass
+	sprite_2d.texture = sprite
 
 func _process(delta: float) -> void:
 	if next:

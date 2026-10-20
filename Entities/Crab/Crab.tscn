@@ -7,11 +7,12 @@
 [ext_resource type="Script" uid="uid://cr4bxbhj2nhio" path="res://Entities/Crab/crab_chase.gd" id="5_ci8fi"]
 [ext_resource type="Script" uid="uid://bfeaxqm3322bn" path="res://Entities/Crab/crab_idle.gd" id="6_wkjpq"]
 [ext_resource type="Script" uid="uid://cl63wrc6ok6fh" path="res://Entities/Enemy/SharedComponents/stun_bar.gd" id="7_ci8fi"]
+[ext_resource type="Texture2D" uid="uid://uk5vyrwindy4" path="res://Assets/crab_sprite.webp" id="7_pfhx5"]
 [ext_resource type="Script" uid="uid://ba40xsblsuhrm" path="res://Entities/Enemy/SharedComponents/stun_manager.gd" id="8_wkjpq"]
 [ext_resource type="Script" uid="uid://bkjjmosflshy6" path="res://Entities/Enemy/SharedComponents/core_manager.gd" id="9_sqg6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e71og"]
-size = Vector2(120, 92)
+size = Vector2(304, 274)
 
 [node name="Crab" type="CharacterBody2D" unique_id=1190127414 node_paths=PackedStringArray("enemy_component")]
 scale = Vector2(2, 2)
@@ -43,20 +44,17 @@ metadata/_custom_type_script = "uid://drrxaf7kwilmu"
 script = ExtResource("6_wkjpq")
 metadata/_custom_type_script = "uid://drrxaf7kwilmu"
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1452178668]
-scale = Vector2(4, 4)
-color = Color(1, 0.64705884, 0, 1)
-polygon = PackedVector2Array(-16, -16, -16, -16, -24, -16, -16, -8, -24, -8, -16, 0, -16, 16, 16, 16, 16, 0, 24, -8, 16, -8, 24, -16, 16, -16, 8, -8, 8, 0, -8, 0, -8, -8)
+[node name="CrabSprite" type="Sprite2D" parent="." unique_id=1378348168]
+texture = ExtResource("7_pfhx5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715795533]
-position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_e71og")
 
 [node name="StunBar" type="ProgressBar" parent="." unique_id=15699396 node_paths=PackedStringArray("stun_manager")]
-offset_left = -20.0
-offset_top = -36.0
-offset_right = 20.0
-offset_bottom = -9.0
+offset_left = -56.0
+offset_top = 156.0
+offset_right = 56.0
+offset_bottom = 191.0
 script = ExtResource("7_ci8fi")
 stun_manager = NodePath("../StunManager")
 metadata/_custom_type_script = "uid://cl63wrc6ok6fh"
@@ -72,10 +70,10 @@ metadata/_custom_type_script = "uid://bkjjmosflshy6"
 [node name="CoreMarkers" type="Node2D" parent="." unique_id=1136340531]
 
 [node name="Marker2D" type="Marker2D" parent="CoreMarkers" unique_id=907412239]
-position = Vector2(-48, -12)
+position = Vector2(-204, 4)
 
 [node name="Marker2D2" type="Marker2D" parent="CoreMarkers" unique_id=1074772538]
-position = Vector2(48, -12)
+position = Vector2(4, -84)
 
 [node name="Marker2D3" type="Marker2D" parent="CoreMarkers" unique_id=1689915207]
-position = Vector2(0, 32)
+position = Vector2(204, 8)

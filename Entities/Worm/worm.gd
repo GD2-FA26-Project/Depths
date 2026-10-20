@@ -6,12 +6,18 @@ class_name Worm extends Node2D
 @onready var segments_root: Node2D = $Segments
 var segments: Array[WormSegment] = []
 
-var num_segments: int = 50
+var num_segments: int = 4
 var speed: int = 1000
-var segment_length: int = 64
+var segment_length: int = 96 # changed from 64
 
 const WORM_SEGMENT = preload("uid://bx7p8ckb4pj6e")
 const CORE = preload("uid://bw0hdhei2k6ha")
+
+const WORM_BODY_1 = preload("uid://dcvfiynv7j5lj")
+const WORM_BODY_2 = preload("uid://djt71wo18hpw2")
+const WORM_BODY_3 = preload("uid://b1mrbcxcbe6xk")
+const WORM_HEAD = preload("uid://cdfeivtx1mlga")
+const WORM_TAIL = preload("uid://dj0wrquy3r76")
 
 
 @export var head: WormSegment = null
@@ -53,13 +59,18 @@ func add_segments() -> void:
 		segments.append(worm_seg)
 		if i != 0: 
 			worm_seg.next = segments[i - 1] 
+			worm_seg.sprite = [WORM_BODY_1, WORM_BODY_3].pick_random()
 		worm_seg.position.x += segment_length * i 
 		segments_root.add_child(worm_seg)
 		# this line with the tool button helps create the nodes in the editor
 		worm_seg.owner = get_tree().edited_scene_root
 	
+	if segments.size() > 1:
+		segments[segments.size() - 1].sprite = WORM_TAIL
+	
 	if !segments.is_empty(): 
 		head = segments[0]
+		#head.sprite = WORM_HEAD
 	
 func editor_add_segments() -> void:
 	if Engine.is_editor_hint():
@@ -70,8 +81,9 @@ func create_cores() -> void:
 	# equally distributes the cores. Had one more core than needed, added 1 just in case
 	var divide: int = num_segments/enemy_component.core_manager.max_cores + 1
 	for i in segments.size():
-		if i % divide == 0:
+		if i % divide == 0 and i != 0:
 			var core: Core = CORE.instantiate()
 			core.initialize(self)
+			segments[i].sprite_2d.texture = WORM_BODY_2
 			segments[i].add_child(core)
 	
