@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bxyms8q2m4uuo"]
+
+[node name="DivePreparation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="WeaponMenu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -620.0
+offset_top = -260.0
+offset_right = -100.0
+offset_bottom = 260.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="Slot1Label" type="Label" parent="WeaponMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "WEAPON SLOT 1"
+
+[node name="Slot1Options" type="OptionButton" parent="WeaponMenu"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+item_count = 2
+selected = 0
+popup/item_0/text = "Harpoon"
+popup/item_0/id = 0
+popup/item_1/text = "Submarine Gun"
+popup/item_1/id = 1
+
+[node name="Slot2Label" type="Label" parent="WeaponMenu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "WEAPON SLOT 2"
+
+[node name="Slot2Options" type="OptionButton" parent="WeaponMenu"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+item_count = 2
+selected = 1
+popup/item_0/text = "Harpoon"
+popup/item_0/id = 0
+popup/item_1/text = "Submarine Gun"
+popup/item_1/id = 1
+
+[node name="StartDivingButton" type="Button" parent="WeaponMenu"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "START DIVING"
+
+[node name="BackButton" type="Button" parent="WeaponMenu"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "BACK"
