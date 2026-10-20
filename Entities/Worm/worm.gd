@@ -3,7 +3,6 @@
 class_name Worm extends Node2D
 
 @export var enemy_component: EnemyComponent
-@onready var remote_transform_2d: RemoteTransform2D = $RemoteTransform2D
 @onready var segments_root: Node2D = $Segments
 var segments: Array[WormSegment] = []
 
