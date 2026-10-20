@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://68dga45i60e4" path="res://Core/core.gd" id="1_7wmpk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wmpk"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_7wmpk"]
+radius = 24.0
 
 [node name="Core" type="Area2D" unique_id=106631129]
 collision_layer = 16
@@ -11,8 +11,4 @@ collision_mask = 0
 script = ExtResource("1_7wmpk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=5434555]
-shape = SubResource("RectangleShape2D_7wmpk")
-
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=810279252]
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -8, 16, -16)
+shape = SubResource("CircleShape2D_7wmpk")

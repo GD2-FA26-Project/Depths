@@ -1,7 +1,7 @@
 class_name CrabChase extends State
 
 var crab: Crab
-var speed: int = 150
+var speed: int = 200
 
 func enter() -> void:
 	self.crab = owner_node as Crab
@@ -13,7 +13,6 @@ func update(delta: float) -> void:
 func physics_update(delta: float) -> void:
 	var player: Player = crab.enemy_component.player
 	crab.velocity = crab.position.direction_to(player.position) * speed
-	crab.rotation = crab.position.direction_to(player.position).angle()
 	if get_dist_to_player() > 500:
 		crab.enemy_component.state_machine.change_state(CrabIdle)
 		

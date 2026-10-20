@@ -1,41 +1,43 @@
 [gd_scene format=3 uid="uid://cfunlmpjrl4tt"]
 
 [ext_resource type="Script" uid="uid://cwl4gyfdewm4o" path="res://Entities/Player/player.gd" id="1_l8h54"]
-[ext_resource type="Texture2D" uid="uid://bpg58tgct2d4r" path="res://Weapons/Template/weapon_holster.png" id="2_3uyv8"]
+[ext_resource type="Texture2D" uid="uid://cecbcco4uxylg" path="res://Assets/submarine_sprite.webp" id="2_tekja"]
+[ext_resource type="Texture2D" uid="uid://dv4f53rxowk6q" path="res://Assets/submarine_gun.webp" id="3_5c2io"]
 [ext_resource type="Script" uid="uid://bqn186vpaqp4a" path="res://Entities/Player/hull_integrity.gd" id="3_lu8i8"]
 [ext_resource type="Script" uid="uid://bibh3vcntkssu" path="res://Entities/Player/hull_bar.gd" id="4_tekja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtgmb"]
-size = Vector2(128, 64)
+size = Vector2(232, 112)
 
 [node name="Player" type="CharacterBody2D" unique_id=631480404]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_l8h54")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=99231198]
-color = Color(0, 1, 1, 1)
-polygon = PackedVector2Array(-64, -32, -64, 32, 64, 32, 64, -32)
+[node name="SubmarineSprite" type="Sprite2D" parent="." unique_id=1895596705]
+texture = ExtResource("2_tekja")
+offset = Vector2(-7, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=824892906]
 shape = SubResource("RectangleShape2D_gtgmb")
 
 [node name="Weapon" type="Node2D" parent="." unique_id=1200854702]
 
-[node name="Sprite2D" type="Sprite2D" parent="Weapon" unique_id=2117529270]
-position = Vector2(16, 0)
-rotation = 1.5707964
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_3uyv8")
+[node name="SubmarineGun" type="Sprite2D" parent="Weapon" unique_id=546990514]
+rotation = -1.5707964
+texture = ExtResource("3_5c2io")
+offset = Vector2(-9, 0)
 
 [node name="LaunchPoint" type="Marker2D" parent="Weapon" unique_id=615020085]
-position = Vector2(16, 0)
+position = Vector2(80, 0)
 
 [node name="HullIntegrity" type="Node" parent="." unique_id=317653899]
 script = ExtResource("3_lu8i8")
 
 [node name="HullBar" type="ProgressBar" parent="." unique_id=1809058181 node_paths=PackedStringArray("hull_integrity")]
+visible = false
 offset_left = -48.0
-offset_top = -64.0
+offset_top = -144.0
 offset_right = 48.0
-offset_bottom = -37.0
+offset_bottom = -117.0
 script = ExtResource("4_tekja")
 hull_integrity = NodePath("../HullIntegrity")

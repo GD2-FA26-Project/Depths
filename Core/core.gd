@@ -1,3 +1,4 @@
+@tool
 class_name Core extends Area2D
 
 ## the enemy or entity who has the core
@@ -11,3 +12,6 @@ func _ready() -> void:
 
 func initialize(owner: Node) -> void:
 	self.core_owner = owner
+
+func _draw() -> void:
+	draw_circle(Vector2.ZERO, 24, Color(1.0, 0.0, 0.737, 0.502))

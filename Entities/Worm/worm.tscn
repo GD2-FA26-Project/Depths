@@ -15,7 +15,7 @@
 [node name="Worm" type="Node2D" unique_id=118016555 node_paths=PackedStringArray("enemy_component", "head")]
 script = ExtResource("1_va2e6")
 enemy_component = NodePath("EnemyComponent")
-head = NodePath("Segments/@CharacterBody2D@29991")
+head = NodePath("Segments/WormSegment")
 
 [node name="EnemyComponent" parent="." unique_id=261719826 node_paths=PackedStringArray("state_machine", "stun_manager", "core_manager") instance=ExtResource("2_rmi03")]
 state_machine = NodePath("../StateMachine")
@@ -24,350 +24,40 @@ core_manager = NodePath("../CoreManager")
 
 [node name="Segments" type="Node2D" parent="." unique_id=219570097]
 
-[node name="@CharacterBody2D@29991" type="CharacterBody2D" parent="Segments" unique_id=1461594538 instance=ExtResource("3_p2yo6")]
+[node name="WormSegment" type="CharacterBody2D" parent="Segments" unique_id=1461594538 instance=ExtResource("3_p2yo6")]
+scale = Vector2(0.75, 0.75)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("4_fbtws")
 
-[node name="@CharacterBody2D@29992" type="CharacterBody2D" parent="Segments" unique_id=384127359 instance=ExtResource("3_p2yo6")]
-position = Vector2(64, 0)
+[node name="@CharacterBody2D@28664" type="CharacterBody2D" parent="Segments" unique_id=1864217341 instance=ExtResource("3_p2yo6")]
+position = Vector2(72, 0)
 rotation = 3.1415925
+scale = Vector2(0.75, 0.75)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("4_fbtws")
 
-[node name="@CharacterBody2D@29993" type="CharacterBody2D" parent="Segments" unique_id=2114178841 instance=ExtResource("3_p2yo6")]
-position = Vector2(128, 0)
+[node name="@CharacterBody2D@28665" type="CharacterBody2D" parent="Segments" unique_id=1473915575 instance=ExtResource("3_p2yo6")]
+position = Vector2(144, 0)
 rotation = 3.1415925
+scale = Vector2(0.75, 0.75)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("4_fbtws")
 
-[node name="@CharacterBody2D@29994" type="CharacterBody2D" parent="Segments" unique_id=1139972069 instance=ExtResource("3_p2yo6")]
-position = Vector2(192, 0)
+[node name="@CharacterBody2D@28666" type="CharacterBody2D" parent="Segments" unique_id=862422255 instance=ExtResource("3_p2yo6")]
+position = Vector2(216, 0)
 rotation = 3.1415925
+scale = Vector2(0.75, 0.75)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("4_fbtws")
 
-[node name="@CharacterBody2D@29995" type="CharacterBody2D" parent="Segments" unique_id=2031401833 instance=ExtResource("3_p2yo6")]
-position = Vector2(256, 0)
+[node name="@CharacterBody2D@28667" type="CharacterBody2D" parent="Segments" unique_id=66353892 instance=ExtResource("3_p2yo6")]
+position = Vector2(288, 0)
 rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@29996" type="CharacterBody2D" parent="Segments" unique_id=1045129405 instance=ExtResource("3_p2yo6")]
-position = Vector2(320, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@29997" type="CharacterBody2D" parent="Segments" unique_id=601804942 instance=ExtResource("3_p2yo6")]
-position = Vector2(384, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@29998" type="CharacterBody2D" parent="Segments" unique_id=566841791 instance=ExtResource("3_p2yo6")]
-position = Vector2(448, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@29999" type="CharacterBody2D" parent="Segments" unique_id=565015569 instance=ExtResource("3_p2yo6")]
-position = Vector2(512, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30000" type="CharacterBody2D" parent="Segments" unique_id=1651804030 instance=ExtResource("3_p2yo6")]
-position = Vector2(576, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30001" type="CharacterBody2D" parent="Segments" unique_id=2047748517 instance=ExtResource("3_p2yo6")]
-position = Vector2(640, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30002" type="CharacterBody2D" parent="Segments" unique_id=545688302 instance=ExtResource("3_p2yo6")]
-position = Vector2(704, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30003" type="CharacterBody2D" parent="Segments" unique_id=1751971660 instance=ExtResource("3_p2yo6")]
-position = Vector2(768, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30004" type="CharacterBody2D" parent="Segments" unique_id=1059466158 instance=ExtResource("3_p2yo6")]
-position = Vector2(832, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30005" type="CharacterBody2D" parent="Segments" unique_id=389403136 instance=ExtResource("3_p2yo6")]
-position = Vector2(896, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30006" type="CharacterBody2D" parent="Segments" unique_id=1529497366 instance=ExtResource("3_p2yo6")]
-position = Vector2(960, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30007" type="CharacterBody2D" parent="Segments" unique_id=1368051261 instance=ExtResource("3_p2yo6")]
-position = Vector2(1024, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30008" type="CharacterBody2D" parent="Segments" unique_id=1669734390 instance=ExtResource("3_p2yo6")]
-position = Vector2(1088, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30009" type="CharacterBody2D" parent="Segments" unique_id=275906510 instance=ExtResource("3_p2yo6")]
-position = Vector2(1152, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30010" type="CharacterBody2D" parent="Segments" unique_id=754778906 instance=ExtResource("3_p2yo6")]
-position = Vector2(1216, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30011" type="CharacterBody2D" parent="Segments" unique_id=98047801 instance=ExtResource("3_p2yo6")]
-position = Vector2(1280, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30012" type="CharacterBody2D" parent="Segments" unique_id=1873749349 instance=ExtResource("3_p2yo6")]
-position = Vector2(1344, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30013" type="CharacterBody2D" parent="Segments" unique_id=239353708 instance=ExtResource("3_p2yo6")]
-position = Vector2(1408, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30014" type="CharacterBody2D" parent="Segments" unique_id=569404292 instance=ExtResource("3_p2yo6")]
-position = Vector2(1472, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30015" type="CharacterBody2D" parent="Segments" unique_id=598096125 instance=ExtResource("3_p2yo6")]
-position = Vector2(1536, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30016" type="CharacterBody2D" parent="Segments" unique_id=588580542 instance=ExtResource("3_p2yo6")]
-position = Vector2(1600, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30017" type="CharacterBody2D" parent="Segments" unique_id=988040421 instance=ExtResource("3_p2yo6")]
-position = Vector2(1664, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30018" type="CharacterBody2D" parent="Segments" unique_id=486930894 instance=ExtResource("3_p2yo6")]
-position = Vector2(1728, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30019" type="CharacterBody2D" parent="Segments" unique_id=1985349277 instance=ExtResource("3_p2yo6")]
-position = Vector2(1792, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30020" type="CharacterBody2D" parent="Segments" unique_id=1874651337 instance=ExtResource("3_p2yo6")]
-position = Vector2(1856, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30021" type="CharacterBody2D" parent="Segments" unique_id=134425488 instance=ExtResource("3_p2yo6")]
-position = Vector2(1920, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30022" type="CharacterBody2D" parent="Segments" unique_id=1717022589 instance=ExtResource("3_p2yo6")]
-position = Vector2(1984, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30023" type="CharacterBody2D" parent="Segments" unique_id=703779715 instance=ExtResource("3_p2yo6")]
-position = Vector2(2048, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30024" type="CharacterBody2D" parent="Segments" unique_id=506326421 instance=ExtResource("3_p2yo6")]
-position = Vector2(2112, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30025" type="CharacterBody2D" parent="Segments" unique_id=483721635 instance=ExtResource("3_p2yo6")]
-position = Vector2(2176, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30026" type="CharacterBody2D" parent="Segments" unique_id=1118935598 instance=ExtResource("3_p2yo6")]
-position = Vector2(2240, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30027" type="CharacterBody2D" parent="Segments" unique_id=1989913932 instance=ExtResource("3_p2yo6")]
-position = Vector2(2304, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30028" type="CharacterBody2D" parent="Segments" unique_id=738345074 instance=ExtResource("3_p2yo6")]
-position = Vector2(2368, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30029" type="CharacterBody2D" parent="Segments" unique_id=223901042 instance=ExtResource("3_p2yo6")]
-position = Vector2(2432, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30030" type="CharacterBody2D" parent="Segments" unique_id=1206680170 instance=ExtResource("3_p2yo6")]
-position = Vector2(2496, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30031" type="CharacterBody2D" parent="Segments" unique_id=2011108450 instance=ExtResource("3_p2yo6")]
-position = Vector2(2560, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30032" type="CharacterBody2D" parent="Segments" unique_id=1106560625 instance=ExtResource("3_p2yo6")]
-position = Vector2(2624, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30033" type="CharacterBody2D" parent="Segments" unique_id=1357138008 instance=ExtResource("3_p2yo6")]
-position = Vector2(2688, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30034" type="CharacterBody2D" parent="Segments" unique_id=1146796956 instance=ExtResource("3_p2yo6")]
-position = Vector2(2752, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30035" type="CharacterBody2D" parent="Segments" unique_id=734515036 instance=ExtResource("3_p2yo6")]
-position = Vector2(2816, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30036" type="CharacterBody2D" parent="Segments" unique_id=278577066 instance=ExtResource("3_p2yo6")]
-position = Vector2(2880, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30037" type="CharacterBody2D" parent="Segments" unique_id=384521287 instance=ExtResource("3_p2yo6")]
-position = Vector2(2944, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30038" type="CharacterBody2D" parent="Segments" unique_id=1954248963 instance=ExtResource("3_p2yo6")]
-position = Vector2(3008, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30039" type="CharacterBody2D" parent="Segments" unique_id=243255883 instance=ExtResource("3_p2yo6")]
-position = Vector2(3072, 0)
-rotation = 3.1415925
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("4_fbtws")
-
-[node name="@CharacterBody2D@30040" type="CharacterBody2D" parent="Segments" unique_id=730087671 instance=ExtResource("3_p2yo6")]
-position = Vector2(3136, 0)
-rotation = 3.1415925
+scale = Vector2(0.75, 0.75)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("4_fbtws")
@@ -389,10 +79,10 @@ script = ExtResource("7_fdt0y")
 metadata/_custom_type_script = "uid://vbtwwxicnnrq"
 
 [node name="StunBar" type="ProgressBar" parent="." unique_id=641772198 node_paths=PackedStringArray("stun_manager")]
-offset_left = -59.0
-offset_top = -60.0
-offset_right = 55.0
-offset_bottom = -33.0
+offset_left = -44.0
+offset_top = -113.0
+offset_right = 70.0
+offset_bottom = -86.0
 script = ExtResource("8_3ok8g")
 stun_manager = NodePath("../StunManager")
 metadata/_custom_type_script = "uid://cl63wrc6ok6fh"
