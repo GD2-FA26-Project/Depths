@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cffrdnbvj4erp"]
+
+[ext_resource type="Script" uid="uid://vyb2h04k0x4e" path="res://UI/surface_base/surface_base.gd" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://bxyms8q2m4uuo" path="res://UI/surface_base/dive_preparation.tscn" id="2_prep"]
+
+[node name="SurfaceBase" type="Control" unique_id=937569779]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_base")
+
+[node name="Background" type="Control" parent="." unique_id=642717278]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ground" type="Polygon2D" parent="Background" unique_id=1014286785]
+position = Vector2(-348, 297)
+polygon = PackedVector2Array(332, 44, 625, 141, 858, 400, 1186, 573, 2285, 789, 335, 788)
+
+[node name="Polygon2D" type="Polygon2D" parent="Background" unique_id=196701715]
+position = Vector2(-412, -90)
+scale = Vector2(1.1453633, 1.1453635)
+polygon = PackedVector2Array(1057, 385, 1482, 386, 1587, 616, 1467, 784, 1049, 780, 818, 576)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=793632115]
+position = Vector2(960, 540)
+
+[node name="Interface" type="CanvasLayer" parent="." unique_id=1025536663]
+
+[node name="BaseMenu" type="VBoxContainer" parent="Interface" unique_id=1388356167]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -444.0
+offset_top = -158.0
+offset_bottom = 158.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 36
+
+[node name="UpgradeButton" type="Button" parent="Interface/BaseMenu" unique_id=579457799]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "UPGRADES
+"
+
+[node name="CreatureLogButton" type="Button" parent="Interface/BaseMenu" unique_id=408941912]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "CREATURE LOG
+"
+
+[node name="GoDivingButton" type="Button" parent="Interface/BaseMenu" unique_id=1224540255]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "GO DIVING
+"
+
+[node name="DivePreparation" parent="Interface" unique_id=16112867 instance=ExtResource("2_prep")]
+visible = false
+
+[connection signal="pressed" from="Interface/BaseMenu/GoDivingButton" to="." method="_on_go_diving_pressed"]
+
+[connection signal="pressed" from="Interface/BaseMenu/UpgradeButton" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="Interface/BaseMenu/CreatureLogButton" to="." method="_on_creature_log_pressed"]

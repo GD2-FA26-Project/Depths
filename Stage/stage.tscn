@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://b0xy6tnnn2jj7" path="res://Stage/stage.gd" id="1_4qfnv"]
 [ext_resource type="PackedScene" uid="uid://cfunlmpjrl4tt" path="res://Entities/Player/player.tscn" id="2_xfrkk"]
 
+[ext_resource type="PackedScene" path="res://UI/hud/hud.tscn" id="3_hud"]
+
+[ext_resource type="PackedScene" path="res://UI/game_menus/game_menus.tscn" id="4_menus"]
+
 [node name="Stage" type="Node2D" unique_id=1574512219]
 script = ExtResource("1_4qfnv")
 
@@ -29,3 +33,7 @@ zoom = Vector2(2, 2)
 [node name="SubmarineGunTimer" type="Timer" parent="." unique_id=1021113536]
 wait_time = 0.3
 one_shot = true
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]
+
+[node name="GameMenus" parent="." instance=ExtResource("4_menus")]

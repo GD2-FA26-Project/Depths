@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bish5mjfyg7jp"]
+
+[ext_resource type="Script" uid="uid://cfcli06abxeuh" path="res://Prototype Zone/room.gd" id="1_ld85j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nigk"]
+size = Vector2(3840, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5svdq"]
+size = Vector2(3840, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3phx"]
+size = Vector2(100, 2160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4b7m8"]
+size = Vector2(100, 2160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csr0i"]
+size = Vector2(3840, 2160)
+
+[node name="Room" type="Node2D" unique_id=833338522]
+script = ExtResource("1_ld85j")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1867018240]
+offset_right = 3840.0
+offset_bottom = 2160.0
+color = Color(0.12015936, 0.06515402, 0.21042117, 1)
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1181325569]
+
+[node name="Wall Top" type="CollisionShape2D" parent="Walls" unique_id=1802562901]
+position = Vector2(1920, 0)
+shape = SubResource("RectangleShape2D_3nigk")
+
+[node name="Wall Bottom" type="CollisionShape2D" parent="Walls" unique_id=634089586]
+position = Vector2(1920, 2160)
+shape = SubResource("RectangleShape2D_5svdq")
+
+[node name="Wall Left" type="CollisionShape2D" parent="Walls" unique_id=1131175927]
+position = Vector2(0, 1080)
+shape = SubResource("RectangleShape2D_a3phx")
+
+[node name="Wall Right" type="CollisionShape2D" parent="Walls" unique_id=408351584]
+position = Vector2(3840, 1080)
+shape = SubResource("RectangleShape2D_4b7m8")
+
+[node name="Room Boundary Trigger" type="Area2D" parent="." unique_id=1328528045]
+position = Vector2(1920, 1080)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room Boundary Trigger" unique_id=1472446073]
+shape = SubResource("RectangleShape2D_csr0i")
