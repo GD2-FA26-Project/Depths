@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dkav5nuqyw0j2"]
+
+[ext_resource type="Texture2D" uid="uid://c2mfupqrdmp1v" path="res://Entities/fish/fish-removebg-preview.png" id="1_hgn23"]
+[ext_resource type="Script" uid="uid://dueo6vrqe87yb" path="res://Entities/fish/fish.gd" id="2_6ik3a"]
+
+[node name="Fish" type="Node2D" unique_id=401037684]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=444987908]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_hgn23")
+script = ExtResource("2_6ik3a")
