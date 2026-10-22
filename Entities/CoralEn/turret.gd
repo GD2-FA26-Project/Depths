@@ -12,7 +12,7 @@ func initialize(player: Player) -> void:
 func _ready() -> void:
 	while true:
 		shoot()
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(1).timeout
 
 func shoot() -> void:
 	if not is_instance_valid(player):

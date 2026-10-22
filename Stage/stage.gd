@@ -22,7 +22,11 @@ var starting_depth_y: float
 @onready var player: Player = $Player
 const HARPOON = preload("uid://b8vxs6ki12cks")
 const WORM = preload("res://Entities/Worm/worm.tscn")
-const CORAL = preload("uid://ca1ab4t72hyfl")
+
+#const CORAL = preload("uid://ca1ab4t72hyfl") old coral
+const TURRET = preload("res://Entities/CoralEn/turret.tscn") #ADDED this for turret enemy
+const FISH = preload("res://Entities/fish/fish.tscn") #ADDED this for fish
+
 const SUBMARINE_GUN = preload("uid://b6juc4ni4vo53")
 var harpoon: Harpoon
 var submarine_bullets: Array[SubmarineGun]
