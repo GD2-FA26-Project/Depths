@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GD2DepthsProject"
-run/main_scene="uid://bm0ndnpdancu0"
+run/main_scene="uid://c7fpp41850gr"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
