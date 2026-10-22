@@ -2,7 +2,6 @@ class_name Stage extends Node2D
 
 @export_range(1.0, 100.0) var pixels_per_meter: float = 10.0
 
-
 # Sample cell data until the room generator supplies the actual layout.
 @export var map_origin: Vector2 = Vector2.ZERO
 @export var map_cell_size: Vector2 = Vector2(700.0, 500.0)
@@ -32,16 +31,15 @@ const SUBMARINE_GUN = preload("uid://b6juc4ni4vo53")
 var harpoon: Harpoon
 var submarine_bullets: Array[SubmarineGun]
 const CRAB = preload("uid://c1eadlrqawygm")
+@onready var turret: Turret = $Turret
+
+
 
 func _ready() -> void:
 	starting_depth_y = player.global_position.y
 	game_menus.map_opened.connect(_update_map_menu)
 	game_menus.menu_opened.connect(_update_pause_menu)
-
-	#spawn_coral() Old coral
-	spawn_TURRET() #testing turret
-	spawn_fish() #testing fish
-
+	turret.initialize(player)
 	spawn_worm()
 	spawn_crab()
 	player.harpoon_shot.connect(shoot_harpoon)
@@ -80,7 +78,6 @@ func extract(core: Core) -> void:
 		if enemy: 
 			enemy.core_manager.remove_core()
 			core.extracted = true
-			print(enemy.core_manager.cores_remaining)
 		core.reparent(harpoon)
 
 func spawn_worm() -> void:
@@ -88,31 +85,10 @@ func spawn_worm() -> void:
 	worm.initialize(player)
 	add_child(worm)
 
-#func spawn_coral() -> void:  Old Coral
-#	var coral: Coral = CORAL.instantiate()
-#	coral.enemy_component.initialize(player, CoralDefending)sa
-#	add_child(coral)
-
-func spawn_TURRET() -> void: #Spawns the turret/coral enemy
-	var turret_instance = TURRET.instantiate()
-	add_child(turret_instance)
-	turret_instance.initialize(player)
-	turret_instance.global_position = Vector2(500, 200) #should change literraly just random numbers
-	
-	
-func spawn_fish() -> void: #Spawns netraul fish
-	for i in range(5):
-		var fish_instance = FISH.instantiate()
-		add_child(fish_instance)
-		fish_instance.global_position = Vector2(
-			randf_range(100, 900), #just and random spot made
-			randf_range(100, 500)
-		)
-
 func spawn_crab() -> void:
 	var crab: Crab = CRAB.instantiate()
 	crab.initialize(player)
-	crab.position = Vector2(-195,571)
+	crab.position = Vector2(1530, 1932)
 	add_child(crab)
 
 func shoot_weapon_projectile() -> void:

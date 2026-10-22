@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cosrblun40j6m"]
 
 [ext_resource type="Script" uid="uid://cr32s0vv7nnih" path="res://Prototype Zone/zone.gd" id="1_gucat"]
-[ext_resource type="PackedScene" uid="uid://cfunlmpjrl4tt" path="res://Entities/Player/player.tscn" id="2_gucat"]
 [ext_resource type="Script" uid="uid://cfcli06abxeuh" path="res://Prototype Zone/room.gd" id="2_wcg0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nigk"]
@@ -32,6 +31,7 @@ offset_bottom = 2160.0
 color = Color(0.12015936, 0.06515402, 0.21042117, 1)
 
 [node name="Walls" type="StaticBody2D" parent="Room1" unique_id=1181325569]
+collision_layer = 4
 
 [node name="Wall Top" type="CollisionShape2D" parent="Room1/Walls" unique_id=1802562901]
 position = Vector2(1920, 0)
@@ -47,6 +47,7 @@ shape = SubResource("RectangleShape2D_4b7m8")
 
 [node name="RoomTrigger" type="Area2D" parent="Room1" unique_id=1328528045]
 position = Vector2(1920, 1080)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room1/RoomTrigger" unique_id=1472446073]
 shape = SubResource("RectangleShape2D_csr0i")
@@ -56,6 +57,7 @@ polygon = PackedVector2Array(0, 0, 3840, 0, 3840, 2160, 1170.8687, 2176.5974, 13
 uv = PackedVector2Array(0, 0, 3840, 0, 3840, 2160, 1170.8687, 2176.5974, 2587.897, 1958.5933, 3358.6978, 1616.015, 3452.1274, 1265.651, 3561.1294, 689.49695, 3467.6997, 206.77328, 2369.892, 160.05807, 1490.0894, 432.5634, 906.1494, 191.20154, 259.92236, 448.13516, 820.5049, 689.49695, 1521.2329, 993.14575, 1910.5264, 1491.4412, 1054.081, 1608.2291, 431.21143, 1888.5203, 618.07227, 2199.955, 0, 2160)
 
 [node name="Room1 Collision" type="StaticBody2D" parent="Room1" unique_id=268291849]
+collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room1/Room1 Collision" unique_id=1773748261]
 polygon = PackedVector2Array(0, 0, 3840, 0, 3840, 2160, 1170.8687, 2176.5974, 1304, 1965, 2838, 1908, 3673, 1632, 3394, 1007, 3570, 240, 3148, 182, 1490.0894, 432.5634, 906.1494, 191.20154, 259.92236, 448.13516, 506, 750, 1170, 876, 2155, 972, 2155, 1390, 431.21143, 1888.5203, 618.07227, 2199.955, 0, 2160)
@@ -66,6 +68,7 @@ polygon = PackedVector2Array(2751, 602, 2831, 514, 2916, 498, 2977, 498, 3073, 5
 uv = PackedVector2Array(2751, 602, 2831, 514, 2916, 498, 2977, 498, 3073, 510, 3100, 552, 3084, 640, 3031, 724, 3031, 767, 2954, 816, 2820, 816, 2716, 816, 2682, 755, 2674, 686)
 
 [node name="Room1 Collision Rock" type="StaticBody2D" parent="Room1" unique_id=2024273608]
+collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room1/Room1 Collision Rock" unique_id=1162779036]
 position = Vector2(-4, 414)
@@ -80,6 +83,7 @@ offset_bottom = 2160.0
 color = Color(0, 0.12575954, 0.11703084, 1)
 
 [node name="Walls" type="StaticBody2D" parent="Room2" unique_id=247668678]
+collision_layer = 4
 
 [node name="Wall Bottom" type="CollisionShape2D" parent="Room2/Walls" unique_id=634089586]
 position = Vector2(1920, 2160)
@@ -91,6 +95,7 @@ shape = SubResource("RectangleShape2D_a3phx")
 
 [node name="RoomTrigger" type="Area2D" parent="Room2" unique_id=60780408]
 position = Vector2(1920, 1080)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room2/RoomTrigger" unique_id=80321671]
 shape = SubResource("RectangleShape2D_csr0i")
@@ -99,6 +104,7 @@ shape = SubResource("RectangleShape2D_csr0i")
 polygon = PackedVector2Array(601, 369, 601, 369, 593, -1, -14, -9, -17, 2163, 143, 2186, 3340, 2183, 3808, 2186, 3854, 2102, 3861, 1775, 3744, 1922, 3621, 1999, 3400, 1969, 3236, 2042, 3109, 1999, 3049, 1808, 2942, 1672, 2926, 1354, 2862, 1164, 2876, 1007, 2812, 840, 2829, 646, 2742, 486, 2695, 379, 2665, 476, 2645, 539, 2531, 800, 2562, 970, 2515, 1097, 2451, 1344, 2401, 1454, 2391, 1698, 2344, 1792, 2291, 1976, 2131, 2039, 1970, 1972, 1830, 2029, 1543, 2019, 1322, 1965, 901, 1986, 574, 1902, 464, 1408, 544, 1184, 403, 1010, 547, 592)
 
 [node name="Room2 Collision1" type="StaticBody2D" parent="Room2" unique_id=1678643380]
+collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room2/Room2 Collision1" unique_id=798478762]
 polygon = PackedVector2Array(601, 369, 601, 369, 593, -1, -14, -9, -17, 2163, 143, 2186, 3340, 2183, 3808, 2186, 3854, 2102, 3861, 1775, 3744, 1922, 3621, 1999, 3400, 1969, 3236, 2042, 3109, 1999, 3049, 1808, 2942, 1672, 2926, 1354, 2862, 1164, 2876, 1007, 2812, 840, 2829, 646, 2742, 486, 2695, 379, 2665, 476, 2645, 539, 2531, 800, 2562, 970, 2515, 1097, 2451, 1344, 2401, 1454, 2391, 1698, 2344, 1792, 2291, 1976, 2131, 2039, 1970, 1972, 1830, 2029, 1543, 2019, 1322, 1965, 901, 1986, 574, 1902, 464, 1408, 544, 1184, 403, 1010, 547, 592)
@@ -107,6 +113,7 @@ polygon = PackedVector2Array(601, 369, 601, 369, 593, -1, -14, -9, -17, 2163, 14
 polygon = PackedVector2Array(1191, 17, 1157, 207, 1191, 334, 1147, 538, 1191, 755, 1194, 868, 1264, 1009, 1264, 1182, 1324, 1326, 1321, 1430, 1361, 1677, 1521, 1353, 1488, 1056, 1635, 785, 1595, 591, 1561, 287, 1718, 150, 1935, 250, 2213, 70, 2497, 60, 2704, 47, 2868, 117, 3148, 47, 3409, 127, 3392, 287, 3616, 454, 3643, 935, 3743, 1049, 3713, 1306, 3840, 1413, 3853, -47, 1221, -17)
 
 [node name="Room2 Collision2" type="StaticBody2D" parent="Room2" unique_id=1815708170]
+collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room2/Room2 Collision2" unique_id=56739745]
 polygon = PackedVector2Array(1191, 17, 1157, 207, 1191, 334, 1147, 538, 1191, 755, 1194, 868, 1264, 1009, 1264, 1182, 1324, 1326, 1321, 1430, 1361, 1677, 1521, 1353, 1488, 1056, 1635, 785, 1595, 591, 1561, 287, 1718, 150, 1935, 250, 2213, 70, 2497, 60, 2704, 47, 2868, 117, 3148, 47, 3409, 127, 3392, 287, 3616, 454, 3643, 935, 3743, 1049, 3713, 1306, 3840, 1413, 3853, -47, 1221, -17)
@@ -169,8 +176,3 @@ polygon = PackedVector2Array(1489, 1029, 1854, 1213, 2219, 1305, 2569, 1265, 222
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room3/Room3 Collision2" unique_id=1163153175]
 polygon = PackedVector2Array(1489, 1029, 1854, 1213, 2219, 1305, 2569, 1265, 2225, 1359, 1965, 1319, 1648, 1175)
-
-[node name="Player" parent="." unique_id=631480404 groups=["player"] instance=ExtResource("2_gucat")]
-position = Vector2(1000, -1600)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=37155772]
