@@ -6,6 +6,7 @@ class_name Player extends CharacterBody2D
 @onready var weapon: Node2D = $Weapon
 @export var speed: int = 400
 @onready var submarine_sprite: Sprite2D = $SubmarineSprite
+@onready var visual_pivot = $VisualPivot
 
 var first_weapon_held: bool = false
 signal harpoon_shot
@@ -32,9 +33,9 @@ func _process(delta: float) -> void:
 	#WASD movement
 	var input = Input.get_vector("left", "right", "up", "down")
 	if input.x == -1:
-		submarine_sprite.flip_h = true
+		visual_pivot.scale.x = -1
 	elif input.x == 1:
-		submarine_sprite.flip_h = false
+		visual_pivot.scale.x = 1
 		
 	velocity = input * speed
 	move_and_slide() 
